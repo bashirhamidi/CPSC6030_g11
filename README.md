@@ -1,3 +1,6 @@
+Per request, here's the URL of the website https://bashirhamidi.github.io/CPSC6030_g11/
+
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/bashirhamidi/CPSC6030_g11/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
