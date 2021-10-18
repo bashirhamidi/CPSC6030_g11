@@ -1,0 +1,59 @@
+Column name,Column name description,Source file
+match,"Match number, “00” format",Number in pdf names when downloaded
+match2,Match number,Number in pdf names when downloaded
+team,Team abbreviation,Fulltime
+player,Number of player,Fulltime
+name,Name of player,Fulltime
+name2,Name of player with number,Fulltime
+pos,"Playing position (GK=Goalkeeper, M=Midfielder, D=Defender, F=Forward)",Fulltime
+pc ,Passes completed,Fulltime
+pa ,Passes attempted,Fulltime
+pc/pa,Passes completed / Passes attempted (%),Fulltime
+pr,Passes received,Fulltime
+min,Minutes playes,Fulltime
+gs,Goals scored,Fulltime
+s,Shots,Fulltime
+sg,Shots on goal,Fulltime
+fc,Fouls commited,Fulltime
+fs,Fouls suffered,Fulltime
+player2,Number of player,Team statistics
+name3,"Other name of the player, usually only last name",Team statistics
+min2,Minutes played with seconds,Team statistics
+dc,Distance covered (metres),Team statistics
+d_in_poss,Distance covered in possession (metres),Team statistics
+d_not_in_poss,Distance covered not in possession (metres),Team statistics
+t_opp_half,Time spent in opposing half (%),Team statistics
+t_att_3rd,Time spent in opposing third (%),Team statistics
+t_pen_area,Time spent in penalty area (%),Team statistics
+sprint,Sprint,Team statistics
+max_speed,Top speed (km/h),Team statistics
+a_l,Activity time spent low (%),Team statistics
+a_m,Activity time spent medium (%),Team statistics
+a_h,Activity time spent high (%),Team statistics
+goals_scored,Goal(s) scored,Players statistics
+attempts_on_off_target,Attempts on/off target,Players statistics
+assists,Assist(s),Players statistics
+offsides,Offside(s),Players statistics
+saves,Save(s),Players statistics
+yellow_cards,Yellow card(s),Players statistics
+2y_r,Expulsion due to Second Caution,Players statistics
+red_card,Red card,Players statistics
+fouls_committed,Foul(s) committed,Players statistics
+delivery_solo_runs_attacking3rd,Delivery/solo runs into the attacking third,Players statistics
+delivery_solo_runs_penalty_area,Delivery/solo runs into the penalty area,Players statistics
+tackles_gaining_the_ball,Tackles gaining the ball,Players statistics
+tackles_not_gaining_the_ball,Tackles not gaining the ball,Players statistics
+tackles_suffered_losing_the_ball,Tackles suffered losing the ball,Players statistics
+tackles_suffered_not_losing_the_ball,Tackles suffered not losing the ball,Players statistics
+clearances_completed,Clearances Completed,Players statistics
+clearances_attempted,Clearances Attempted,Players statistics
+total_time_played_mins,Total time played (mins),Players statistics
+low_activity_time_spent,Low activity time spent (%),Players statistics
+medium_activity_time_spent,Medium activity time spent (%),Players statistics
+high_activity_time_spent,High activity time spent (%),Players statistics
+distance_covered_m,Distance covered (metres),Players statistics
+low_adc_m,Low activity distance covered (metres),Players statistics
+medium_adc_m,Medium activity distance covered (metres),Players statistics
+high_adc_m,High activity distance covered (metres),Players statistics
+top_speed,Top speed (km/h),Players statistics
+sprints,Sprints,Players statistics
