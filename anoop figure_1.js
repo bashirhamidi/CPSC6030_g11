@@ -42,7 +42,8 @@ d3.json("18245_madrid.json").then(function(dataset){
            .attr("y", y(0))
            .attr("width", width)
            .attr("height", height)
-           .attr("fill", "none")
+           .attr("fill", "green")
+           .attr("opacity", "0.25")
            .attr("stroke", "black")  
     // right penalty area 
         svg.append("rect")
