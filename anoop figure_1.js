@@ -4,7 +4,7 @@ d3.json("18245_madrid.json").then(function(dataset){
         
     console.log(jersey_numbers[5552])
 
-    var plotscale = 750
+    var plotscale = 900
     
     var margin = {top: (plotscale * (14.86/960)), 
                     right: (plotscale * (20/960)), 
@@ -136,7 +136,7 @@ d3.json("18245_madrid.json").then(function(dataset){
 							.attr('cy', function(d){return y(d.location[1])})
                             .attr("fill", "#157f3b")
                             .attr("r", function(d){
-								if (d.minute<5){ 
+								if (d.minute<5 && (d.pass.outcome==null)){ 
 									return 10
 									}
 									else {return 0}})
@@ -152,7 +152,7 @@ d3.json("18245_madrid.json").then(function(dataset){
                     .attr("dx", function(d){return x(d.location[0])})
                     .attr("dy", function(d){return y(d.location[1])})
                     .text(function(d){
-						if (d.minute<5){return jersey_numbers[d.player.id]}
+						if (d.minute<5  && (d.pass.outcome==null)){return jersey_numbers[d.player.id]}
 						else {return null}})
                     .attr('font-size', "20px")
     
@@ -165,7 +165,7 @@ d3.json("18245_madrid.json").then(function(dataset){
                         .attr('cy', function(d){return y(d.pass.end_location[1])})
                         .attr("fill",  "#2f7ebc")
                         .attr("r", function(d){
-                            if (d.minute<5){ 
+                            if (d.minute<5 && (d.pass.outcome==null)){ 
                                 return 10
                                 }
 								else {return 0}})
@@ -181,7 +181,7 @@ d3.json("18245_madrid.json").then(function(dataset){
                         .attr("dx",  function(d){return x(d.pass.end_location[0])})
                         .attr("dy",  function(d){return y(d.pass.end_location[1])})
                         .text(function(d){
-                            if (d.pass.recipient !=null && d.minute<5){return jersey_numbers[d.pass.recipient.id]}
+                            if (d.pass.recipient !=null && d.minute<5  && (d.pass.outcome==null)){return jersey_numbers[d.pass.recipient.id]}
                             else{return null}
 							})
                         .attr('font-size', "20px")
@@ -197,7 +197,7 @@ d3.json("18245_madrid.json").then(function(dataset){
                         .attr("y2", function(d){return y(d.pass.end_location[1])})
                         .attr("stroke", "black")
                         .attr("stroke-width", function(d){
-                            if (d.minute<5){ 
+                            if (d.minute<5 && (d.pass.outcome==null)){ 
                                 return 2
                                 }
 								else {return 0}})
