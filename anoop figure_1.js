@@ -155,6 +155,7 @@ d3.json("18245_madrid.json").then(function(dataset){
 						if (d.minute<5  && (d.pass.outcome==null)){return jersey_numbers[d.player.id]}
 						else {return null}})
                     .attr('font-size', "20px")
+                    .attr("transform", "translate(0,5)" )
     
     var end_location=svg.append("g")
                         .selectAll("circle")
@@ -169,6 +170,7 @@ d3.json("18245_madrid.json").then(function(dataset){
                                 return 10
                                 }
 								else {return 0}})
+                        .attr("transform", "translate(0,-5)" )
     
     
         var end_text = svg.append('g')
