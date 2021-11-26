@@ -24,7 +24,7 @@ d3.json("18245_madrid.json").then(function (dataset){
                 .style("width", dimensions.width + dimensions.margin.left + dimensions.margin.right)
                 .style("height", dimensions.height + dimensions.margin.top + dimensions.margin.bottom)
                 .append("g")
-                //.attr("transform", "translate(" + dimensions.margin.left + "," + dimensions.margin.top + ")");
+                .attr("transform", "translate(" + dimensions.margin.left + "," + dimensions.margin.top + ")");
         
 
     var xScale = d3.scaleBand()
@@ -51,6 +51,20 @@ d3.json("18245_madrid.json").then(function (dataset){
                 .attr("width", xScale.bandwidth())
                 .attr("height", d =>dimensions.height - dimensions.margin.bottom - yScale(d[1].length))
                 .attr("fill", "steelblue")
+                .on('mouseover', function(){
+                    d3.select(this)
+                        .attr("stroke-width",1)
+                        .attr("stroke","black")
+                })
+                .on('mouseout', function(){
+                    d3.select(this)
+                        .attr("stroke-width", 0)    
+                })
+                .on('click', function(d){
+                    d3.select('#pattern')
+
+                    var temp=d[0]
+                })
 
     var xAxisgen = d3.axisBottom().scale(xScale)
     var yAxisgen = d3.axisLeft().scale(yScale)
