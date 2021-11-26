@@ -9,7 +9,7 @@ d3.json("18245_madrid.json").then(function(dataset){
     var margin = {top: (plotscale * (14.86/960)), 
                     right: (plotscale * (20/960)), 
                     bottom: (plotscale * (24/960)), 
-                    left: (plotscale* (40/960))}
+                    left: (plotscale* (100/960))}
     var width = plotscale - margin.left - margin.right
     var height = (plotscale * (68/105) - margin.top - margin.bottom) 
         console.log(68/105, height/width)
@@ -28,6 +28,7 @@ d3.json("18245_madrid.json").then(function(dataset){
                 .attr("height", height + margin.top + margin.bottom)
                 .append("g")
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+                
     
     svg.append("clipPath")
         .attr("id", "clip")
@@ -161,7 +162,7 @@ d3.json("18245_madrid.json").then(function(dataset){
 									else {return 0}})
                             .on('mouseover', function(){
                                 d3.select(this)
-                                    .attr("stroke-width",0.5)
+                                    .attr("stroke-width",1)
                                     .attr("stroke","black")
                             })
                             .on('mouseout', function(){
@@ -201,7 +202,7 @@ d3.json("18245_madrid.json").then(function(dataset){
                         .attr("transform", "translate(0,-5)" )
                         .on('mouseover', function(){
                             d3.select(this)
-                                .attr("stroke-width",0.5)
+                                .attr("stroke-width",1)
                                 .attr("stroke","black")
                         })
                         .on('mouseout', function(){
