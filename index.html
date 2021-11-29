@@ -1,51 +1,131 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8"/>
-    <title> Influence of Passing Behavior on Performance in Football </title>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Influence of Passing Behavior on Performance in Football</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css">
+    <link rel="stylesheet" href="css/main.css">
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    
-    <style>
-    h1 {text-align: center;}
-    p {text-align: center;}
-    div {text-align: center;}
-    </style>
-  </head>
-  
-  <body>
-    <h1> Research Article  </h1>
-    <a href="https://ieeexplore.ieee.org/document/9222314">PassVizor: Toward Better Understanding of the Dynamics of Soccer Passes</a> 
-    
-    <!-- <p>We are attempting to replicate parts of the above article's Figure 4, image of the original Figure is <a href="https://github.com/bashirhamidi/CPSC6030_g11/blob/main/Article_original_figure_4.png">found here</a>. 
-    </p>
-    <h1> Figure 1  </h1> -->
-    <svg id="chart"></svg>
-    <svg id="nodes"></svg>
-    <svg id="pattern"></svg>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+
+    <div id="FullPage">
+
+
+        <section class="section s1">
+            <h1> Influence of Passing Behavior in Football</h1>
+            <p>
+                Have you ever wondered the extent to which passing impacts the outcome of football? To study this, we
+                have built a dashboard with the primary goal of answering the following research
+                questions:
+            </p>
+            <p>
+                1. How does passing behavior influence the outcome of a game?
+                <br> 2. What is the impact of different players in the overall performance of the game?
+                <br> 3. What are the passing styles and patterns of a particular team?
+            </p>
+
+            <p>
+                <br> <a href="#section2">Continue to learn more</a>
+                <br> <a href="#section3">Skip to visualization</a>
+            </p>
+
+
+
+        </section>
+
+
+        <section class="section s2">
+            <h1> Background </h1>
+            <p>
+                <strong>Publication:</strong>
+                <br>We were inspired by the publication “PassVizor: Toward Better Understanding of the Dynamics of
+                Soccer Passes”, published in <a href="https://doi.org/10.1109/TVCG.2020.3030359">IEEE Transactions on
+                    Visualization and Computer Graphics</a>. The idea behind the paper is to derive underlying patterns
+                in football passes to try to better understand the attacking styles. This helps in analyzing how players
+                build an attack using different passing tactics.
+            </p>
+
+            <p>
+                <strong>Motivation:</strong>
+                <br> Football is a passing game. Although the outcome of a game is determined by the number of goals
+                scored, it wouldn’t be possible to score goals without passing the ball. It is also important to
+                acknowledge the fact that goal scoring is a team effort. The contributions of players in different
+                positions must be accounted for to develop a proper understanding of the impact of players in a
+                particular game.
+                <br> Moreover, there is a misconception that goal scorers are the most important players in a team. From
+                an informed standpoint, this is not true in most cases and there are several players contributing to the
+                success of a team. The visualizations that we hope to achieve will clear this misconception and enable
+                the viewer to have a better understanding of the game and players’ importance represented through
+                passing dynamics.
+            </p>
+            <p>
+                <br> <a href="#section3">Continue to learn more</a>
+                <br> <a href="#section4">Skip to visualization</a>
+            </p>
+
+        </section>
+
+        <section class="section s3">
+            <h1> About the visualization</h1>
+            <p>
+                <strong>Motivation:</strong>
+                <br> Instructions with screenshots of what is what
+            </p>
+            <p>
+                <br> <a href="#section4">Continue to visualization</a>
+            </p>
+
+
+        </section>
+
+
+        <section class="section s4">
+            <h1> Visualization</h1>
+            <svg id="chart"></svg>
+            <svg id="nodes"></svg>
+            <svg id="pattern"></svg>
+            <svg id="figure_d"></svg>
+        </section>
+
+
+
+        <section class="section s5">
+            <h1> Contacts</h1>
+            <p>
+                <strong>Anoop Kakkireni</strong>
+                <br>PhD/Masters? Student
+                <br>in Major?
+                <br>at Clemson University
+                <br>Explore GitHub
+                <br>email@clemson.edu
+
+            </p>
+
+            <p>
+                <strong>Bashir Hamidi</strong>
+                <br>PhD Student
+                <br>in Biomedical Data Science and Informatics
+                <br>at joint Clemson University & Medical University of South Carolina
+                <br><a href="https://github.com/bashirhamidi">Explore GitHub</a>
+                <br>hamidib@clemson.edu
+            </p>
+
+        </section>
+
+
+
+    </div>
+
+    <script src="fullpage.js"></script>
     <script src="barcharts_v2.js"></script>
-    <!--<p> This is a visualization for all the passes within the first 5 minutes of the football game. The 'green' circles represent the originating location of the pass with the jersey-number of player who initiates the pass.
-      The 'blue' circles represent the location of the player who is receiving the pass. The idea in the near future is to replace the lines with arrows to clearly show the passing dirrection and pattern. Furthermore, we will try to 
-      make the visualisation interative to depict the passes for each one minute interval to understand the build-up of play for the resulting outcome(goal, shots, etc.). We will also try to change the appearance of the node to accomodate the 
-      player jersey-number within the circle clearly.</p>-->
 
-   
-     
-    
-    <!-- <div id="chart"></div> -->
 
-    <!--<h1> Figure 2  </h1> 
-    <svg id="figure_2"></svg>
-    <script src="figure_2.js"></script> -->
+</body>
 
-    
-  <!--   <h1> Figure  3 </h1>
-    <svg id="figure_3"></svg>
-    <script src="figure_3.js"></script>
-
-    
-    <h1> Figure 4 </h1>
-    <svg id="figure_4"></svg>
-    <script src="figure_4.js"></script> -->
-
-   </body>
 </html>
