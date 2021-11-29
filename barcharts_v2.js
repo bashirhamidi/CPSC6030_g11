@@ -185,8 +185,6 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .domain([0, 80])
         .range([0, height])
 
-    function update(temp) {
-        
         document.getElementById("pattern").innerHTML=''
 
         var svg3 = d3.select("#pattern")
@@ -287,7 +285,9 @@ d3.json("18245_madrid.json").then(function (dataset) {
             .attr("fill", "none")
             .attr("stroke", "black")
 
-
+    
+    function update(temp) {
+        
 
         var edges = svg3.append("g")
             .selectAll("line")
