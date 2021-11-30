@@ -6,7 +6,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
 
     var dimensions = {
         width: 1350,
-        height: 200,
+        height: window.innerHeight/6,
         margin: {
             top: 10,
             bottom: 0,
@@ -80,7 +80,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
 
     var dimensions2 = {
         width: 1350,
-        height: 400,
+        height: window.innerHeight/4,
         margin: {
             top: 10,
             bottom: 10,
