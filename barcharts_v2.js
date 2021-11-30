@@ -566,85 +566,130 @@ d3.json("18245_madrid.json").then(function (dataset) {
             .attr('font-size', "15px")
 
     }
-
+    var width4=1350-width
     var svg4=d3.select("#stats")
-                //.append("svg")
-                .attr("width", 1350 - width - margin.left - margin.right)
+               // .append("svg")
+                .attr("width", width4 - margin.right - margin.left)
                 .attr("height", height + margin.top + margin.bottom)
                 .append("g")
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+                .attr('color', 'grey')
               //  .attr("viewBox", "200, 200, 1000, 1000")
 
-    var stats={ 5597:{'id': 1,'passes_completed':14, 'passes_attempted':22, 'passing_accuracy':63.63, 'shot_assists': 0, 'shots_taken':0, 'assists':0, 'goals':0 }, 
-                5721:{'id': 2,'passes_completed':24, 'passes_attempted':30, 'passing_accuracy':80,'shot_assists': 1,'shots_taken':0, 'assists':0, 'goals':0 },
-                5485:{'id': 5,'passes_completed':52, 'passes_attempted':57, 'passing_accuracy':91.22,'shot_assists': 0, 'shots_taken':0, 'assists':0, 'goals':0} ,
-                5201:{'id': 4,'passes_completed':77, 'passes_attempted':80, 'passing_accuracy':96.26, 'shot_assists': 0,'shots_taken':0, 'assists':0, 'goals':0 },
-                5552:{'id': 12,'passes_completed':70, 'passes_attempted':83, 'passing_accuracy':84.33, 'shot_assists': 1,'shots_taken':1, 'assists':2, 'goals':0 },
-                5539:{'id': 14,'passes_completed':33, 'passes_attempted':35, 'passing_accuracy':94.28, 'shot_assists': 1,'shots_taken':0, 'assists':0, 'goals':0 },
-                5463:{'id': 10,'passes_completed':66, 'passes_attempted':70, 'passing_accuracy':94.28,'shot_assists': 0, 'shots_taken':1, 'assists':0, 'goals':0 },
-                5574:{'id': 8,'passes_completed':83, 'passes_attempted':89, 'passing_accuracy':93.25, 'shot_assists': 1,'shots_taken':0, 'assists':0, 'goals':0 },
-                4926:{'id': 22,'passes_completed':46, 'passes_attempted':49, 'passing_accuracy':93.87,'shot_assists': 0, 'shots_taken':2, 'assists':0, 'goals':0 },
-                19677:{'id': 9,'passes_completed':35, 'passes_attempted':38, 'passing_accuracy':92.1,'shot_assists': 2, 'shots_taken':4, 'assists':0, 'goals':1 },
-                5207:{'id': 7,'passes_completed':33, 'passes_attempted':34, 'passing_accuracy':97.05,'shot_assists': 0, 'shots_taken':3, 'assists':0, 'goals':0 },
-                6399:{'id': 11,'passes_completed':7, 'passes_attempted':8, 'passing_accuracy':87.5, 'shot_assists': 1,'shots_taken':2, 'assists':0, 'goals':2 },
-                5202:{'id': 6,'passes_completed':45, 'passes_attempted':50, 'passing_accuracy':90,'shot_assists': 1, 'shots_taken':1, 'assists':0, 'goals':0 },
-                5719:{'id': 20,'passes_completed':1, 'passes_attempted':2, 'passing_accuracy':50, 'shot_assists': 0,'shots_taken':0, 'assists':0, 'goals':0 }
-             }
-
-     
-  /*   var xScale4 = d3.scaleBand()
-                    .domain(dataset.map(d => d.minute)) //defines the interval of values in our dataset
-                    .range([dimensions.margin.left, dimensions.width - dimensions.margin.right]) //defines the pixels // starting from zero pixel and maximum value is what we have set for the graph at the top of script  
-                    .padding(0.2)
-      
-          var pass_minute1 = d3.group(dataset, (d => d.minute))
-      
-          console.log(pass_minute2)
-      
-          var yScale1 = d3.scaleLinear()
-              .domain([0, d3.max(pass_minute1, d => d[1].length)])
-              .range([dimensions.height - dimensions.margin.bottom, dimensions.margin.top])
-      
-          console.log(pass_minute1)
-      
-          var bar = svg1.selectAll("rect")
-              .data(pass_minute1)
-              .enter()
-              .append("rect")
-              .attr("x", d => xScale1(d[0]))
-              .attr("y", d => yScale1(d[1].length))
-              .attr("width", xScale1.bandwidth())
-              .attr("height", d => dimensions.height - dimensions.margin.bottom - yScale1(d[1].length))
-              .attr("fill", "steelblue")
-              .on('mouseover', function () {
-                  d3.select(this)
-                      .attr("stroke-width", 1)
-                      .attr("stroke", "black")
-              })
-              .on('mouseout', function () {
-                  d3.select(this)
-                      .attr("stroke-width", 0)
-              })
-              .on('click', function (d, i) {
-                  temp = i[0]
-                  update(temp)
-                  console.log(temp)
-              })
-      
-          var xAxisgen1 = d3.axisBottom().scale(xScale1)
-          var yAxisgen1 = d3.axisLeft().scale(yScale1)
-      
-      
-          /*  var xAxis = svg.append("g")
-                          .call(xAxisgen)
-                          .style("transform", `translateY(${dimensions.height - dimensions.margin.bottom}px)`)
-                          .selectAll("text")
-                          .style("text-anchor", "end") */
-          //.attr("transform", "rotate(-65)")
-      
-         /*  var yAxis1 = svg1.append("g")
-              .call(yAxisgen1)
-              .style("transform", `translateX(${dimensions.margin.left}px)`) */
-
+    var stats=[ 
+                {'player':5597,'id': 1,'passes_completed':14, 'passes_attempted':22, 'passing_accuracy':63.63, 'shot_assists': 0, 'shots_taken':0, 'assists':0, 'goals':0 }, 
+                {'player':5721,'id': 2,'passes_completed':24, 'passes_attempted':30, 'passing_accuracy':80,'shot_assists': 1,'shots_taken':0, 'assists':0, 'goals':0 },
+                {'player':5485,'id': 5,'passes_completed':52, 'passes_attempted':57, 'passing_accuracy':91.22,'shot_assists': 0, 'shots_taken':0, 'assists':0, 'goals':0} ,
+                {'player':5201,'id': 4,'passes_completed':77, 'passes_attempted':80, 'passing_accuracy':96.26, 'shot_assists': 0,'shots_taken':0, 'assists':0, 'goals':0 },
+                {'player':5552,'id': 12,'passes_completed':70, 'passes_attempted':83, 'passing_accuracy':84.33, 'shot_assists': 1,'shots_taken':1, 'assists':2, 'goals':0 },
+                {'player':5539,'id': 14,'passes_completed':33, 'passes_attempted':35, 'passing_accuracy':94.28, 'shot_assists': 1,'shots_taken':0, 'assists':0, 'goals':0 },
+                {'player':5463,'id': 10,'passes_completed':66, 'passes_attempted':70, 'passing_accuracy':94.28,'shot_assists': 0, 'shots_taken':1, 'assists':0, 'goals':0 },
+                {'player':5574,'id': 8,'passes_completed':83, 'passes_attempted':89, 'passing_accuracy':93.25, 'shot_assists': 1,'shots_taken':0, 'assists':0, 'goals':0 },
+                {'player':4926,'id': 22,'passes_completed':46, 'passes_attempted':49, 'passing_accuracy':93.87,'shot_assists': 0, 'shots_taken':2, 'assists':0, 'goals':0 },
+                {'player':19677,'id': 9,'passes_completed':35, 'passes_attempted':38, 'passing_accuracy':92.1,'shot_assists': 2, 'shots_taken':4, 'assists':0, 'goals':1 },
+                {'player':5207,'id': 7,'passes_completed':33, 'passes_attempted':34, 'passing_accuracy':97.05,'shot_assists': 0, 'shots_taken':3, 'assists':0, 'goals':0 },
+                {'player':6399,'id': 11,'passes_completed':7, 'passes_attempted':8, 'passing_accuracy':87.5, 'shot_assists': 1,'shots_taken':2, 'assists':0, 'goals':2 },
+                {'player':5202,'id': 6,'passes_completed':45, 'passes_attempted':50, 'passing_accuracy':90,'shot_assists': 1, 'shots_taken':1, 'assists':0, 'goals':0 },
+                {'player':5719,'id': 20,'passes_completed':1, 'passes_attempted':2, 'passing_accuracy':50, 'shot_assists': 0,'shots_taken':0, 'assists':0, 'goals':0 }
+             ]
     
+
+             console.log(stats)
+        
+        d3.select("#selectButton")
+            .selectAll('myOptions')
+            .data(stats)
+            .enter()
+            .append('option')
+            .text(function(d){return d.id}) // text showed in the menu
+            .attr("value", function (d) { return d.id})
+
+            console.log(d3.max(stats, d=>d.id))
+
+    var x_passes_completed=d3.scaleLinear()
+                                .domain([0,d3.max(stats, d=>d.passes_completed)])
+                                .range([margin.left, 200])
+    var x_passing_accuracy=d3.scaleLinear()
+                                .domain([0,d3.max(stats, d=>d.passing_accuracy)])
+                                .range([margin.left, 200])
+
+    var x_passes_attempted=d3.scaleLinear()
+                                .domain([0,d3.max(stats, d=>d.passes_attempted)])
+                                .range([margin.left, 200])
+        console.log(x_passes_completed(25))
+
+    var x_shots_taken=d3.scaleLinear()
+                                .domain([0,d3.max(stats, d=>d.shots_taken)])
+                                .range([margin.left, 200])
+
+    var x_shot_assists=d3.scaleLinear()
+                                .domain([0,d3.max(stats, d=>d.shot_assists)])
+                                .range([margin.left, 200])
+
+    /* var x_shots_taken=d3.scaleLinear()
+                                .domain([0,d3.max(stats, d=>d.shots_taken)])
+                                .range([0, width]) */
+        console.log(x_passes_completed(25))
+
+    var y_stats=d3.scaleBand()
+                    .domain(['Passes', 'Shots', 'Accuracy'])
+                    .range([20, height])
+                    .padding(0.2)
+
+             console.log(stats.filter(d=>d.id==7))
+
+console.log(height)
+
+var button=12
+
+        svg4.append('rect')
+            .attr("x",0)
+            .attr('y',0)
+            .attr('width', width4)
+            .attr('height', height)
+            .attr('fill', 'grey')
+
+var bar = svg4.append("rect")
+             .data(stats.filter(d=>d.id==button))
+            .attr("x", 20)
+             .attr("y", 200)
+             .attr("width", function(d){return x_passes_completed(d.passes_completed)})
+             .attr("height", 20)
+             .attr("fill", "black")
+             .style("transfrom", 'translate(50,0)')
+
+var bar = svg4.append("rect")
+             .data(stats.filter(d=>d.id==button))
+            .attr("x", 20)
+             .attr("y", 250)
+             .attr("width", function(d){return x_passing_accuracy(d.passing_accuracy)})
+             .attr("height", 20)
+             .attr("fill", "black")
+
+var bar = svg4.append("rect")
+             .data(stats.filter(d=>d.id==button))
+            .attr("x", 20)
+             .attr("y", 300)
+             .attr("width", function(d){return  x_passes_attempted(d.passes_attempted)})
+             .attr("height", 20)
+             .attr("fill", "black")
+
+var bar = svg4.append("rect")
+             .data(stats.filter(d=>d.id==button))
+            .attr("x", 20)
+             .attr("y", 350)
+             .attr("width", function(d){return  x_shot_assists(d.shot_assists)})
+             .attr("height", 20)
+             .attr("fill", "black")
+
+var bar = svg4.append("rect")
+             .data(stats.filter(d=>d.id==button))
+            .attr("x", 20)
+             .attr("y", 400)
+             .attr("width", function(d){return  x_shots_taken(d.shots_taken)})
+             .attr("height", 20)
+             .attr("fill", "black")
+
+            
+        
             })
