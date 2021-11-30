@@ -185,6 +185,185 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .domain([0, 80])
         .range([0, height])
 
+        var svg3 = d3.select("#pattern")
+        //.append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+
+
+    svg3.append("clipPath")
+        .attr("id", "clip")
+        .append("rect")
+        .attr("class", "mesh")
+        .attr("width", width)
+        .attr("height", height)
+
+    // field outline    
+    svg3.append("rect")
+        .attr("id", "outline")
+        .attr("x", x(0))
+        .attr("y", y(0))
+        .attr("width", width)
+        .attr("height", height)
+        .attr("fill", "green")
+        .attr("opacity", "0.35")
+        .attr("stroke", "black")
+    // right penalty area 
+    svg3.append("rect")
+        .attr("id", "six")
+        .attr("x", x(102))
+        .attr("y", y(18))
+        .attr("width", x(120) - x(102))
+        .attr("height", y(62) - y(18))
+        .attr("fill", "none")
+        .attr("stroke", "black")
+    // right six yard box
+    svg3.append("rect")
+        .attr("id", "penarea")
+        .attr("x", x(114))
+        .attr("y", y(30))
+        .attr("width", x(120) - x(114))
+        .attr("height", y(50) - y(30))
+        .attr("fill", "none")
+        .attr("stroke", "black")
+    // right goal
+    svg3.append("rect")
+        .attr("id", "penarea")
+        .attr("x", x(120))
+        .attr("y", y(36))
+        .attr("width", margin.right - 1)
+        .attr("height", y(44) - y(36))
+        .attr("fill", "none")
+        .attr("stroke", "black")
+
+    // left penalty area 
+    svg3.append("rect")
+        .attr("id", "six")
+        .attr("x", x(0))
+        .attr("y", y(18))
+        .attr("width", x(18) - x(0))
+        .attr("height", y(62) - y(18))
+        .attr("fill", "none")
+        .attr("stroke", "black")
+    // six yard box
+    svg3.append("rect")
+        .attr("id", "penarea")
+        .attr("x", x(0))
+        .attr("y", y(30))
+        .attr("width", x(6) - x(0))
+        .attr("height", y(50) - y(30))
+        .attr("fill", "none")
+        .attr("stroke", "black")
+
+    // left goal
+    svg3.append("rect")
+        .attr("id", "penarea")
+        .attr("x", x(0) - margin.right + 1)
+        .attr("y", y(36))
+        .attr("width", margin.right - 1)
+        .attr("height", y(44) - y(36))
+        .attr("fill", "none")
+        .attr("stroke", "black")
+
+    // 50 yd line
+    svg3.append("line")
+        .attr("id", "half")
+        .attr("x1", x(60))
+        .attr("x2", x(60))
+        .attr("y1", y(0))
+        .attr("y2", y(80))
+        .attr("stroke", "black")
+    // center circle
+    svg3.append("circle")
+        .attr("cx", x(60))
+        .attr("cy", y(40))
+        .attr("r", x(5))
+        .attr("fill", "none")
+        .attr("stroke", "black")
+    
+    //initial player positions
+    svg3.append("circle")
+        .attr("cx", x(30))
+        .attr("cy", y(70))
+        .attr("r", 10)
+        .attr("fill", "#157f3b")
+        .attr("stroke", "black")
+    
+    svg3.append("circle")
+        .attr("cx", x(30))
+        .attr("cy", y(30))
+        .attr("r", 10)
+        .attr("fill", "#157f3b")
+        .attr("stroke", "black")
+    svg3.append("circle")
+        .attr("cx", x(30))
+        .attr("cy", y(50))
+        .attr("r", 10)
+        .attr("fill", "#157f3b")
+        .attr("stroke", "black")
+    svg3.append("circle")
+        .attr("cx", x(30))
+        .attr("cy", y(10))
+        .attr("r", 10)
+        .attr("fill", "#157f3b")
+        .attr("stroke", "black")
+    svg3.append("circle")
+        .attr("cx", x(60))
+        .attr("cy", y(70))
+        .attr("r", 10)
+        .attr("fill", "#157f3b")
+        .attr("stroke", "black")
+    svg3.append("circle")
+        .attr("cx", x(60))
+        .attr("cy", y(50))
+        .attr("r", 10)
+        .attr("fill", "#157f3b")
+        .attr("stroke", "black")
+    svg3.append("circle")
+        .attr("cx", x(60))
+        .attr("cy", y(30))
+        .attr("r", 10)
+        .attr("fill", "#157f3b")
+        .attr("stroke", "black")
+    svg3.append("circle")
+        .attr("cx", x(60))
+        .attr("cy", y(10))
+        .attr("r", 10)
+        .attr("fill", "#157f3b")
+        .attr("stroke", "black")
+    svg3.append("circle")
+        .attr("cx", x(90))
+        .attr("cy", y(30))
+        .attr("r", 10)
+        .attr("fill", "#157f3b")
+        .attr("stroke", "black")
+    svg3.append("circle")
+        .attr("cx", x(90))
+        .attr("cy", y(50))
+        .attr("r", 10)
+        .attr("fill", "#157f3b")
+        .attr("stroke", "black")
+
+   /*  var start_text = svg3.append("g")
+            .attr("class", "labels")
+            .selectAll("text")
+            .data(dataset)
+            .enter()
+            .append("text")
+            .attr("text-anchor", "middle")
+            .attr("dx", function (d) { return x(d.location[0]) })
+            .attr("dy", function (d) { return y(d.location[1]) })
+            .text(function (d) {
+                if (d.minute == temp && (d.pass.outcome == null)) { return jersey_numbers[d.player.id] }
+                else { return null }
+            })
+            .attr('font-size', "15px")
+            .attr("transform", "translate(0,5)") */
+        
+    function update(temp) {
+        
         document.getElementById("pattern").innerHTML=''
 
         var svg3 = d3.select("#pattern")
@@ -210,7 +389,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
             .attr("width", width)
             .attr("height", height)
             .attr("fill", "green")
-            .attr("opacity", "0.25")
+            .attr("opacity", "0.35")
             .attr("stroke", "black")
         // right penalty area 
         svg3.append("rect")
@@ -285,9 +464,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
             .attr("fill", "none")
             .attr("stroke", "black")
 
-    
-    function update(temp) {
-        
+
 
         var edges = svg3.append("g")
             .selectAll("line")
@@ -390,4 +567,84 @@ d3.json("18245_madrid.json").then(function (dataset) {
 
     }
 
-})
+    var svg4=d3.select("#stats")
+                //.append("svg")
+                .attr("width", 1350 - width - margin.left - margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+              //  .attr("viewBox", "200, 200, 1000, 1000")
+
+    var stats={ 5597:{'id': 1,'passes_completed':14, 'passes_attempted':22, 'passing_accuracy':63.63, 'shot_assists': 0, 'shots_taken':0, 'assists':0, 'goals':0 }, 
+                5721:{'id': 2,'passes_completed':24, 'passes_attempted':30, 'passing_accuracy':80,'shot_assists': 1,'shots_taken':0, 'assists':0, 'goals':0 },
+                5485:{'id': 5,'passes_completed':52, 'passes_attempted':57, 'passing_accuracy':91.22,'shot_assists': 0, 'shots_taken':0, 'assists':0, 'goals':0} ,
+                5201:{'id': 4,'passes_completed':77, 'passes_attempted':80, 'passing_accuracy':96.26, 'shot_assists': 0,'shots_taken':0, 'assists':0, 'goals':0 },
+                5552:{'id': 12,'passes_completed':70, 'passes_attempted':83, 'passing_accuracy':84.33, 'shot_assists': 1,'shots_taken':1, 'assists':2, 'goals':0 },
+                5539:{'id': 14,'passes_completed':33, 'passes_attempted':35, 'passing_accuracy':94.28, 'shot_assists': 1,'shots_taken':0, 'assists':0, 'goals':0 },
+                5463:{'id': 10,'passes_completed':66, 'passes_attempted':70, 'passing_accuracy':94.28,'shot_assists': 0, 'shots_taken':1, 'assists':0, 'goals':0 },
+                5574:{'id': 8,'passes_completed':83, 'passes_attempted':89, 'passing_accuracy':93.25, 'shot_assists': 1,'shots_taken':0, 'assists':0, 'goals':0 },
+                4926:{'id': 22,'passes_completed':46, 'passes_attempted':49, 'passing_accuracy':93.87,'shot_assists': 0, 'shots_taken':2, 'assists':0, 'goals':0 },
+                19677:{'id': 9,'passes_completed':35, 'passes_attempted':38, 'passing_accuracy':92.1,'shot_assists': 2, 'shots_taken':4, 'assists':0, 'goals':1 },
+                5207:{'id': 7,'passes_completed':33, 'passes_attempted':34, 'passing_accuracy':97.05,'shot_assists': 0, 'shots_taken':3, 'assists':0, 'goals':0 },
+                6399:{'id': 11,'passes_completed':7, 'passes_attempted':8, 'passing_accuracy':87.5, 'shot_assists': 1,'shots_taken':2, 'assists':0, 'goals':2 },
+                5202:{'id': 6,'passes_completed':45, 'passes_attempted':50, 'passing_accuracy':90,'shot_assists': 1, 'shots_taken':1, 'assists':0, 'goals':0 },
+                5719:{'id': 20,'passes_completed':1, 'passes_attempted':2, 'passing_accuracy':50, 'shot_assists': 0,'shots_taken':0, 'assists':0, 'goals':0 }
+             }
+
+     
+  /*   var xScale4 = d3.scaleBand()
+                    .domain(dataset.map(d => d.minute)) //defines the interval of values in our dataset
+                    .range([dimensions.margin.left, dimensions.width - dimensions.margin.right]) //defines the pixels // starting from zero pixel and maximum value is what we have set for the graph at the top of script  
+                    .padding(0.2)
+      
+          var pass_minute1 = d3.group(dataset, (d => d.minute))
+      
+          console.log(pass_minute2)
+      
+          var yScale1 = d3.scaleLinear()
+              .domain([0, d3.max(pass_minute1, d => d[1].length)])
+              .range([dimensions.height - dimensions.margin.bottom, dimensions.margin.top])
+      
+          console.log(pass_minute1)
+      
+          var bar = svg1.selectAll("rect")
+              .data(pass_minute1)
+              .enter()
+              .append("rect")
+              .attr("x", d => xScale1(d[0]))
+              .attr("y", d => yScale1(d[1].length))
+              .attr("width", xScale1.bandwidth())
+              .attr("height", d => dimensions.height - dimensions.margin.bottom - yScale1(d[1].length))
+              .attr("fill", "steelblue")
+              .on('mouseover', function () {
+                  d3.select(this)
+                      .attr("stroke-width", 1)
+                      .attr("stroke", "black")
+              })
+              .on('mouseout', function () {
+                  d3.select(this)
+                      .attr("stroke-width", 0)
+              })
+              .on('click', function (d, i) {
+                  temp = i[0]
+                  update(temp)
+                  console.log(temp)
+              })
+      
+          var xAxisgen1 = d3.axisBottom().scale(xScale1)
+          var yAxisgen1 = d3.axisLeft().scale(yScale1)
+      
+      
+          /*  var xAxis = svg.append("g")
+                          .call(xAxisgen)
+                          .style("transform", `translateY(${dimensions.height - dimensions.margin.bottom}px)`)
+                          .selectAll("text")
+                          .style("text-anchor", "end") */
+          //.attr("transform", "rotate(-65)")
+      
+         /*  var yAxis1 = svg1.append("g")
+              .call(yAxisgen1)
+              .style("transform", `translateX(${dimensions.margin.left}px)`) */
+
+    
+            })
