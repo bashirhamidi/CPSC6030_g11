@@ -6,12 +6,12 @@ d3.json("18245_madrid.json").then(function (dataset) {
 
     var dimensions = {
         width: 1350,
-        height: 200,
+        height: window.innerHeight / 8, //200
         margin: {
             top: 10,
             bottom: 2,
             right: 10,
-            left: 50
+            left: 40
         }
     }
     var svg1 = d3.select("#chart")
@@ -133,12 +133,12 @@ d3.json("18245_madrid.json").then(function (dataset) {
 
     var dimensions2 = {
         width: 1350,
-        height: 400,
+        height: window.innerHeight / 4, //400,
         margin: {
             top: 10,
             bottom: 10,
             right: 10,
-            left: 50
+            left: 40
         }
     }
 
@@ -232,7 +232,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .attr("opacity", "0.5")
 
 
-    var plotscale = 800
+    var plotscale = 550
 
     var margin = {
         top: (plotscale * (14.86 / 960)),
