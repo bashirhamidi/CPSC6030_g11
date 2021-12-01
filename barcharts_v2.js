@@ -650,7 +650,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
                 }
                 else { return 0 }
             })
-            .on('mouseover', function () {
+           /*  .on('mouseover', function () {
                 d3.select(this)
                     .attr("stroke-width", 1)
                     .attr("stroke", "black")
@@ -658,7 +658,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
             .on('mouseout', function () {
                 d3.select(this)
                     .attr("stroke-width", 0)
-            })
+            }) */
 
 
         var start_text = svg3.append("g")
@@ -692,7 +692,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
                 else { return 0 }
             })
             .attr("transform", "translate(0,-5)")
-            .on('mouseover', function () {
+            /* .on('mouseover', function () {
                 d3.select(this)
                     .attr("stroke-width", 1)
                     .attr("stroke", "black")
@@ -700,7 +700,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
             .on('mouseout', function () {
                 d3.select(this)
                     .attr("stroke-width", 0)
-            })
+            }) */
 
 
         var end_text = svg3.append('g')
