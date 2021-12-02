@@ -1,16 +1,63 @@
+//reminder from https://www.youtube.com/watch?v=roywYSEPSvc
+//css.main is generated from scss file
+//to do this, select scss file within Visual Studio code, go to the bottom of the page and click on "Watch". Then css is generated on save from scss
+
+//for whatever reason, couldn't get this to work with css and ended up manually doing it in js
+// axis {
+//     font-size: 5rem !important;
+//     font: 20px sans-serif;
+//     text-anchor: middle;
+//     fill: rgb(255, 0, 0);
+// }
+
+.selected {
+    //fill: red !important;
+    stroke: rgb(147, 238, 138) !important;
+}
+
+.tab {
+    display: inline-block;
+    margin-left: 40px;
+}
+
 h1 {
     font-family: 'Arial';
     text-align: left;
     vertical-align: top;
     margin: 1em;
     font-size: 4rem;
+    //    border-bottom: 0rem !important;
+    //    border-top: 0rem !important;
+    //    border-spacing: 0rem;
+    //    border-top-width: 0ch;
+    //    padding-top: 0ch;
 }
 
-p {
-    //color: rgb(207, 29, 29);
+.p {
+    font-family: 'Arial';
     text-align: left;
+    vertical-align: top;
     margin: 2em;
+    font-size: 2rem;
+    border-left: 2em;
+}
+
+.p1 {
+    //color: rgb(207, 29, 29);
     //margin-left: 6em;
+    font-family: 'Arial';
+    text-align: left;
+    vertical-align: top;
+    margin: 2em;
+    font-size: 2rem;
+    border-left: 2em;
+}
+
+.p2 {
+    font-family: 'Arial';
+    text-align: left;
+    vertical-align: top;
+    margin: 0em;
     font-size: 2rem;
 }
 
@@ -57,68 +104,115 @@ p {
     user-select: none;
 }
 
-
-
 .s1 {
-    //    background: url('../images/Article_original_figure_4.png');
-    //    background-size: cover;
-
     h1 {
-        //color: rgb(207, 29, 29);
         text-align: left;
-        margin-left: 1em;
+        margin-left: 50pt;
         font-size: 4rem;
+    }
+
+    p {
+        text-align: left;
+        margin: 50pt; //margin is not working... Figured it out. Can't use body tag, it has to be paragraph p
+        //margin-left: 6em;
+        font-size: 1.7rem;
+
     }
 }
 
-
 .s2 {
-    //background: url('../images/Article_original_figure_4.png');
-    //background-size: cover;
-
     h1 {
-        //color: rgb(207, 29, 29);
         text-align: left;
-        margin-left: 1em;
+        margin-left: 50pt;
         font-size: 4rem;
     }
 
+    p {
+        text-align: left;
+        margin: 50pt; //margin is not working... Figured it out. Can't use body tag, it has to be paragraph p
+        //margin-left: 6em;
+        font-size: 1.7rem;
+
+    }
 }
 
 .s3 {
-
-    /*     background: url('../images/Article_original_figure_4.png');
-    background-size: cover; */
     h1 {
-        //color: rgb(207, 29, 29);
         text-align: left;
-        margin-left: 1em;
+        margin-left: 50pt;
         font-size: 4rem;
+    }
+
+    p {
+        text-align: left;
+        margin: 50pt; //margin is not working... Figured it out. Can't use body tag, it has to be paragraph p
+        //margin-left: 6em;
+        font-size: 1.7rem;
+
     }
 }
 
 .s4 {
     h1 {
         text-align: left;
-        margin-left: 1em;
+        margin-left: 50pt;
         font-size: 4rem;
     }
 
     p {
-        //color: rgb(207, 29, 29);
         text-align: left;
-        margin-left: 2em; //margin is not working... Figured it out. Can't use body tag, it has to be paragraph p
+        margin: 50pt; //margin is not working... Figured it out. Can't use body tag, it has to be paragraph p
         //margin-left: 6em;
-        font-size: 2rem;
+        font-size: 1.7rem;
+
     }
 }
+
+.s5 {
+    h1 {
+        text-align: left;
+        margin-left: 50pt;
+        font-size: 4rem;
+    }
+
+    p {
+        text-align: left;
+        margin: 50pt; //margin is not working... Figured it out. Can't use body tag, it has to be paragraph p
+        //margin-left: 6em;
+        font-size: 1.7rem;
+
+    }
+}
+
+// .s2 {
+//     //background: url('../images/Article_original_figure_4.png');
+//     //background-size: cover;
+
+//     h1 {
+//         //color: rgb(207, 29, 29);
+//         text-align: left;
+//         margin-left: 1em;
+//         font-size: 4rem;
+//     }
+
+// }
+
+// .s3 {
+
+//     /*     background: url('../images/Article_original_figure_4.png');
+//     background-size: cover; */
+//     h1 {
+//         //color: rgb(207, 29, 29);
+//         text-align: left;
+//         margin-left: 1em;
+//         font-size: 4rem;
+//     }
+// }
 
 // span {
 //     background: black !important; //scroll dot colors
 //     color: black
 // }
-
-
 //tooltip text has the following properties
 //<div class="fp-tooltip fp-right">Discover</div>
 

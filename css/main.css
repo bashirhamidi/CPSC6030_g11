@@ -1,3 +1,12 @@
+.selected {
+  stroke: #93ee8a !important;
+}
+
+.tab {
+  display: inline-block;
+  margin-left: 40px;
+}
+
 h1 {
   font-family: 'Arial';
   text-align: left;
@@ -6,9 +15,29 @@ h1 {
   font-size: 4rem;
 }
 
-p {
+.p {
+  font-family: 'Arial';
   text-align: left;
+  vertical-align: top;
   margin: 2em;
+  font-size: 2rem;
+  border-left: 2em;
+}
+
+.p1 {
+  font-family: 'Arial';
+  text-align: left;
+  vertical-align: top;
+  margin: 2em;
+  font-size: 2rem;
+  border-left: 2em;
+}
+
+.p2 {
+  font-family: 'Arial';
+  text-align: left;
+  vertical-align: top;
+  margin: 0em;
   font-size: 2rem;
 }
 
@@ -67,37 +96,62 @@ p {
 
 .s1 h1 {
   text-align: left;
-  margin-left: 1em;
+  margin-left: 50pt;
   font-size: 4rem;
+}
+
+.s1 p {
+  text-align: left;
+  margin: 50pt;
+  font-size: 1.7rem;
 }
 
 .s2 h1 {
   text-align: left;
-  margin-left: 1em;
+  margin-left: 50pt;
   font-size: 4rem;
 }
 
-.s3 {
-  /*     background: url('../images/Article_original_figure_4.png');
-    background-size: cover; */
+.s2 p {
+  text-align: left;
+  margin: 50pt;
+  font-size: 1.7rem;
 }
 
 .s3 h1 {
   text-align: left;
-  margin-left: 1em;
+  margin-left: 50pt;
   font-size: 4rem;
+}
+
+.s3 p {
+  text-align: left;
+  margin: 50pt;
+  font-size: 1.7rem;
 }
 
 .s4 h1 {
   text-align: left;
-  margin-left: 1em;
+  margin-left: 50pt;
   font-size: 4rem;
 }
 
 .s4 p {
   text-align: left;
-  margin-left: 2em;
-  font-size: 2rem;
+  margin: 50pt;
+  font-size: 1.7rem;
+}
+
+.s5 h1 {
+  text-align: left;
+  margin-left: 50pt;
+  font-size: 4rem;
+}
+
+.s5 p {
+  text-align: left;
+  margin: 50pt;
+  font-size: 1.7rem;
 }
 
 .fp-tooltip {
