@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Influence of Passing Behavior on Performance in Football</title>
+    <title>Dynamics of Football Passes</title>
+    <link rel="shortcut icon" type="image/jpg" href="/images/favicon_3.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -18,21 +19,23 @@
 
 
         <section class="section s1">
-            <h1> Influence of Passing Behavior in Football</h1>
-            <p>
+            <h1> Dynamics of Football Passes</h1>
+            <p> <br> <br>
                 Have you ever wondered the extent to which passing impacts the outcome of football? To study this, we
                 have built a dashboard with the primary goal of answering the following research
                 questions:
             </p>
             <p>
-                1. How does passing behavior influence the outcome of a game?
-                <br> 2. What is the impact of different players in the overall performance of the game?
-                <br> 3. What are the passing styles and patterns of a particular team?
+                <span class="tab"></span>1. How does passing behavior influence the outcome of a game?
+                <br> <br> <span class="tab"></span>2. What is the impact of different players in the overall performance
+                of
+                the game?
+                <br> <br> <span class="tab"></span>3. What are the passing styles and patterns of a particular team?
             </p>
 
-            <p>
+            <p> <br> <br>
                 <br> <a href="#section2">Continue to learn more</a>
-                <br> <a href="#section3">Skip to visualization</a>
+                <br> <a href="#section4">Skip to dashboard</a>
             </p>
 
 
@@ -41,7 +44,9 @@
 
 
         <section class="section s2">
-            <h1> Background </h1>
+            <!-- <p class="p1"> Background </p> -->
+            <h1> Background</h1>
+            <!-- <p class="p2"> -->
             <p>
                 <strong>Publication:</strong>
                 <br>We were inspired by the publication “PassVizor: Toward Better Understanding of the Dynamics of
@@ -51,7 +56,7 @@
                 build an attack using different passing tactics.
             </p>
 
-            <p>
+            <p> <br>
                 <strong>Motivation:</strong>
                 <br> Football is a passing game. Although the outcome of a game is determined by the number of goals
                 scored, it wouldn’t be possible to score goals without passing the ball. It is also important to
@@ -60,25 +65,46 @@
                 particular game.
                 <br> Moreover, there is a misconception that goal scorers are the most important players in a team. From
                 an informed standpoint, this is not true in most cases and there are several players contributing to the
-                success of a team. The visualizations that we hope to achieve will clear this misconception and enable
-                the viewer to have a better understanding of the game and players’ importance represented through
+                success of a team. This dashboard will clear this misconception and enable the viewer to have a better
+                understanding of the game and players’ importance represented through
                 passing dynamics.
             </p>
-            <p>
+
+
+            <p> <br>
                 <br> <a href="#section3">Continue to learn more</a>
-                <br> <a href="#section4">Skip to visualization</a>
+                <br> <a href="#section4">Skip to dashboard</a>
             </p>
 
         </section>
 
         <section class="section s3">
-            <h1> About the visualization</h1>
+            <!-- <p class="p1">About the visualization</p2> -->
+            <h1>About the Dashboard</h1>
+            <p class="p2">
+
+                <br> The data has been compiled by StatsBomb and made freely available via the <a
+                    href="https://github.com/statsbomb/open-data">StatsBomb Open Data
+                    repository</a> for public use and research projects.
+
+                <br><br>
+                The subset of data selected is from a match between Liverpool and Real Madrid.
+
+                <br> Here, we have filtered all the
+                passes involving players of Real Madrid.
             <p>
-                <strong>Motivation:</strong>
-                <br> Instructions with screenshots of what is what
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
             </p>
-            <p>
-                <br> <a href="#section4">Continue to visualization</a>
+
+
+            </p>
+            <p class="p2">
+                <br> <br><br> <a href="#section4">Continue to dashboard</a>
             </p>
 
 
@@ -86,8 +112,8 @@
 
 
         <section class="section s4">
-            <h1> Visualization</h1>
-            <svg id="chart"></svg>
+            <!-- <p class="p2">PassBoard</p> -->
+            <br><svg id="chart"></svg>
             <br><svg id="nodes"></svg>
             <br><svg id="pattern"></svg>
             <svg id="stats"></svg>
@@ -99,21 +125,36 @@
             <h1> Contacts</h1>
             <p>
                 <strong>Anoop Kakkireni</strong>
-                <br>PhD/Masters? Student
-                <br>in Major?
-                <br>at Clemson University
-                <br>Explore GitHub
-                <br>email@clemson.edu
+                <br>Masters Student
+                <br>Computer Science
+                <br>Clemson University
+                <br><a href="https://github.com/anoopkak">Explore GitHub</a>
+                <br><a href="mailto:akakkir@clemson.edu">akakkir@clemson.edu</a>
 
             </p>
 
             <p>
                 <strong>Bashir Hamidi</strong>
                 <br>PhD Student
-                <br>in Biomedical Data Science and Informatics
-                <br>at joint Clemson University & Medical University of South Carolina
+                <br>Biomedical Data Science and Informatics
+                <br>Joint Clemson University & Medical University of South Carolina
                 <br><a href="https://github.com/bashirhamidi">Explore GitHub</a>
-                <br>hamidib@clemson.edu
+                <br><a href="mailto:bhamidi@clemson.edu">bhamidi@clemson.edu</a>
+                <br>
+                <br>
+                <br>
+                <br>
+
+            </p>
+            <p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
             </p>
 
         </section>
@@ -123,7 +164,7 @@
     </div>
 
     <script src="fullpage.js"></script>
-    <script src="barcharts_v2.js"></script>
+    <script src="barcharts_v4.js"></script>
 
 
 </body>
