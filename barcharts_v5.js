@@ -227,6 +227,23 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .selectAll("text")
     //.style("text-anchor", "end")
 
+    var lines = svg2.append("g")
+        .selectAll("line")
+        .data(["2", "5", "4", "12", "6", "10", "14", "8", "9", "22", "7", "11", "20"])
+        .enter()
+        .append("line")
+        .attr("x1", dimensions2.margin.left)
+        .attr("y1", function (d) {
+            return yScale2(d)
+        })
+        .attr("x2", dimensions2.width - dimensions2.margin.right)
+        .attr("y2", function (d) {
+            return yScale2(d)
+        })
+        .attr("stroke", "black")
+        .attr("stroke-width", 1)
+        .attr("transform", "translate(0," + ((dimensions2.height - dimensions2.margin.top) / 13) / 2 + ")") //        .attr("transform", "translate(0,14.5)")
+        .attr("opacity", "0.5")
 
     console.log(dataset[1].player.id)
     var jersey_nums = [5721, 5485, 5201, 5552, //2, 5, 4, 12
@@ -286,25 +303,6 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .call(d3.axisLeft().scale(yScale2))
         .style("transform", `translateX(${dimensions2.margin.left}px)`)
     console.log("TEST line 219", yScale2.domain)
-
-
-    var lines = svg2.append("g")
-        .selectAll("line")
-        .data(["2", "5", "4", "12", "6", "10", "14", "8", "9", "22", "7", "11", "20"])
-        .enter()
-        .append("line")
-        .attr("x1", dimensions2.margin.left)
-        .attr("y1", function (d) {
-            return yScale2(d)
-        })
-        .attr("x2", dimensions2.width - dimensions2.margin.right)
-        .attr("y2", function (d) {
-            return yScale2(d)
-        })
-        .attr("stroke", "black")
-        .attr("stroke-width", 1)
-        .attr("transform", "translate(0," + ((dimensions2.height - dimensions2.margin.top) / 13) / 2 + ")") //        .attr("transform", "translate(0,14.5)")
-        .attr("opacity", "0.5")
 
 
     //X axis background
@@ -1247,6 +1245,68 @@ d3.json("18245_madrid.json").then(function (dataset) {
             console.log(button)
         })
 
+    svg4.append("circle") //substitute #6
+        .attr("cx", 300)
+        .attr("cy", 170)
+        .attr("r", 15)
+        .attr("fill", "#f28e2c")
+        //.attr("stroke", "white")
+        .on('mouseover', function (d, i) {
+            d3.select(this)
+                .attr("stroke-width", 2)
+                .attr("stroke", "white")
+        })
+        .on('mouseout', function () {
+            d3.select(this)
+                .attr("stroke-width", 0)
+        })
+        .on('click', function (d, i) {
+            button = 6
+            stat(button)
+            console.log(button)
+        })
+    svg4.append("circle") //substitute #20
+        .attr("cx", 450)
+        .attr("cy", 70)
+        .attr("r", 15)
+        .attr("fill", "#af7aa1")
+        //.attr("stroke", "white")
+        .on('mouseover', function (d, i) {
+            d3.select(this)
+                .attr("stroke-width", 2)
+                .attr("stroke", "white")
+        })
+        .on('mouseout', function () {
+            d3.select(this)
+                .attr("stroke-width", 0)
+        })
+        .on('click', function (d, i) {
+            button = 20
+            stat(button)
+            console.log(button)
+        })
+    svg4.append("circle") //substitute #10
+        .attr("cx", 450)
+        .attr("cy", 150)
+        .attr("r", 15)
+        .attr("fill", "#af7aa1")
+        //.attr("stroke", "white")
+        .on('mouseover', function (d, i) {
+            d3.select(this)
+                .attr("stroke-width", 2)
+                .attr("stroke", "white")
+        })
+        .on('mouseout', function () {
+            d3.select(this)
+                .attr("stroke-width", 0)
+        })
+        .on('click', function (d, i) {
+            button = 11
+            stat(button)
+            console.log(button)
+        })
+
+
     //player numbers
     svg4.append("text")
         .attr("text-anchor", "middle")
@@ -1273,14 +1333,14 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .attr('font-size', "10px")
         .style("fill", "white")
         .attr("transform", "translate(0,3)")
-    svg4.append("text")
-        .attr("text-anchor", "middle")
-        .attr("dx", 50)
-        .attr("dy", 170)
-        .text(2)
-        .attr('font-size', "10px")
-        .style("fill", "white")
-        .attr("transform", "translate(0,3)")
+    // svg4.append("text")
+    //     .attr("text-anchor", "middle")
+    //     .attr("dx", 50)
+    //     .attr("dy", 170)
+    //     .text(2)
+    //     .attr('font-size', "10px")
+    //     .style("fill", "white")
+    //     .attr("transform", "translate(0,3)")
     svg4.append("text")
         .attr("text-anchor", "middle")
         .attr("dx", 50)
@@ -1340,6 +1400,32 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .style("fill", "white")
         .attr("transform", "translate(0,3)")
 
+    svg4.append("text")
+        .attr("text-anchor", "middle")
+        .attr("dx", 300)
+        .attr("dy", 170)
+        .text(6)
+        .attr('font-size', "10px")
+        .style("fill", "white")
+        .attr("transform", "translate(0,3)")
+
+    svg4.append("text")
+        .attr("text-anchor", "middle")
+        .attr("dx", 450)
+        .attr("dy", 70)
+        .text(20)
+        .attr('font-size', "10px")
+        .style("fill", "white")
+        .attr("transform", "translate(0,3)")
+    svg4.append("text")
+        .attr("text-anchor", "middle")
+        .attr("dx", 450)
+        .attr("dy", 150)
+        .text(11)
+        .attr('font-size', "10px")
+        .style("fill", "white")
+        .attr("transform", "translate(0,3)")
+
 
     var x_passes_completed = d3.scaleLinear()
         .domain([0, d3.max(stats, d => d.passes_completed)])
@@ -1370,6 +1456,23 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .range([20, height])
         .padding(0.2)
 
+    svg4.append('text')
+        //.attr("text-anchor", "middle")
+        .attr("dx", 20)
+        .attr("dy", 20)
+        .text('Starting lineup:')
+        .attr('font-weight', 1000)
+        .attr('font-size', "20px")
+        .style("fill", "black")
+
+    svg4.append('text')
+        //.attr("text-anchor", "middle")
+        .attr("dx", 300)
+        .attr("dy", 20)
+        .text('Substitutes:')
+        .attr('font-weight', 1000)
+        .attr('font-size', "20px")
+        .style("fill", "black")
 
     svg4.append('text')
         //.attr("text-anchor", "middle")
