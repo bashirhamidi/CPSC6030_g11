@@ -227,6 +227,26 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .selectAll("text")
     //.style("text-anchor", "end")
 
+
+    console.log(dataset[1].player.id)
+    var jersey_nums = [5721, 5485, 5201, 5552, //2, 5, 4, 12
+        5463, 5539, 5574, //10, 14, 8
+        5207, 4926, 19677, //9, 22, 7
+        6399, 5202, 5719 //11, 6, 20
+    ]
+    console.log(jersey_nums)
+    var jersey_nums_colors = ["#f28e2c", "#f28e2c", "#f28e2c", "#f28e2c",
+        "#edc949", "#edc949", "#edc949",
+        "#af7aa1", "#af7aa1", "#af7aa1",
+        "#e15759", "#e15759", "#e15759"
+    ]
+    console.log(jersey_nums_colors)
+    //add color scale for the nodes
+    var colorScale = d3.scaleOrdinal()
+        .domain(jersey_nums) //        .domain([...new Set(d3.map(dataset, d => d.player.id))])
+
+        .range(jersey_nums_colors) //        .range(jersey_nums_colors) //d3.schemeCategory10
+    //blue, orange, green, red, purple, brown, pink, grey, light green, teal, dark blue, orange, 
     var circles = svg2.selectAll("circle")
         .data(dataset)
         .enter()
@@ -246,7 +266,8 @@ d3.json("18245_madrid.json").then(function (dataset) {
 
         })
         .attr("r", 5)
-        .attr("fill", "steelblue")
+        //original color via Anoop       .attr("fill", "steelblue") //steelblue
+        .attr("fill", d => colorScale(d.player.id))
         /* function(d){
            if ((d.pass.outcome == null) || (d.team.name == "Real Madrid")){
            if ((jersey_numbers[d.player.id]==2) || (jersey_numbers[d.player.id]==5) || (jersey_numbers[d.player.id]==4) || (jersey_numbers[d.player.id]==12) || (jersey_numbers[d.player.id]==6)){
@@ -1037,7 +1058,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .attr("cx", 50)
         .attr("cy", 50)
         .attr("r", 15)
-        .attr("fill", "black")
+        .attr("fill", "#f28e2c") //now orange, previous #black
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .attr("stroke-width", 2)
@@ -1057,7 +1078,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .attr("cx", 50)
         .attr("cy", 90)
         .attr("r", 15)
-        .attr("fill", "#black")
+        .attr("fill", "#f28e2c") //now orange, previous #black
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .attr("stroke-width", 2)
@@ -1076,7 +1097,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .attr("cx", 50)
         .attr("cy", 130)
         .attr("r", 15)
-        .attr("fill", "#black")
+        .attr("fill", "#f28e2c") //now orange, previous #black
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .attr("stroke-width", 2)
@@ -1095,7 +1116,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .attr("cx", 50)
         .attr("cy", 170)
         .attr("r", 15)
-        .attr("fill", "#black")
+        .attr("fill", "#f28e2c") //now orange, previous #black
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .attr("stroke-width", 2)
@@ -1114,7 +1135,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .attr("cx", 125)
         .attr("cy", 70)
         .attr("r", 15)
-        .attr("fill", "#black")
+        .attr("fill", "#edc949") // now yellowish, previous "#black"
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .attr("stroke-width", 2)
@@ -1133,7 +1154,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .attr("cx", 125)
         .attr("cy", 110)
         .attr("r", 15)
-        .attr("fill", "#black")
+        .attr("fill", "#edc949") // now yellowish, previous "#black"
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .attr("stroke-width", 2)
@@ -1152,7 +1173,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .attr("cx", 125)
         .attr("cy", 150)
         .attr("r", 15)
-        .attr("fill", "#black")
+        .attr("fill", "#edc949") // now yellowish, previous "#black"
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .attr("stroke-width", 2)
@@ -1171,7 +1192,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .attr("cx", 200)
         .attr("cy", 70)
         .attr("r", 15)
-        .attr("fill", "#black")
+        .attr("fill", "#af7aa1") // now purple, previous "#black"
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .attr("stroke-width", 2)
@@ -1190,7 +1211,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .attr("cx", 200)
         .attr("cy", 110)
         .attr("r", 15)
-        .attr("fill", "#black")
+        .attr("fill", "#af7aa1") // now purple, previous "#black"
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .attr("stroke-width", 2)
@@ -1209,7 +1230,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .attr("cx", 200)
         .attr("cy", 150)
         .attr("r", 15)
-        .attr("fill", "#black")
+        .attr("fill", "#af7aa1") // now purple, previous "#black"
         //.attr("stroke", "white")
         .on('mouseover', function (d, i) {
             d3.select(this)
