@@ -252,10 +252,10 @@ d3.json("18245_madrid.json").then(function (dataset) {
         6399, 5202, 5719 //11, 6, 20
     ]
     console.log(jersey_nums)
-    var jersey_nums_colors = ["#f28e2c", "#f28e2c", "#f28e2c", "#f28e2c",
-        "#edc949", "#edc949", "#edc949",
-        "#af7aa1", "#af7aa1", "#af7aa1",
-        "#e15759", "#e15759", "#e15759"
+    var jersey_nums_colors = ["#f28e2c", "#f28e2c", "#f28e2c", "#f28e2c", //orange
+        "#edc949", "#edc949", "#edc949", //yellow
+        "#af7aa1", "#af7aa1", "#af7aa1", //purple
+        "#f28e2c", "#af7aa1", "#af7aa1" //substitutes orange, purple, purple
     ]
     console.log(jersey_nums_colors)
     //add color scale for the nodes
@@ -1685,4 +1685,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
 
 
     }
+
+
+
 })
