@@ -159,7 +159,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .attr("width", 12)
         .attr('height', 12)
         .attr("fill", "steelblue")
-        .attr("xlink:href", "kicking.png")
+        .attr("xlink:href", "images/kicking.png")
 
     svg5.selectAll("img")
         .data([50, 63, 82])
@@ -170,7 +170,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .attr("width", 10)
         .attr('height', 10)
         .attr("fill", "steelblue")
-        .attr("xlink:href", "favicon_3.png")
+        .attr("xlink:href", "images/favicon_3.png")
 
 
     var svg1 = d3.select("#chart")
