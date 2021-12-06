@@ -438,7 +438,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
                 output = (jersey_numbers[d.player.id])
                 return yScale2("" + output)
             }
-            else { return -1000 }
+            else { return -10000 }
 
         }
 
