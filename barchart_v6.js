@@ -30,14 +30,14 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .attr("y", 0)
         .attr("width", 30)
         .attr('height', 30)
-        .attr("xlink:href", "madrid.png")
+        .attr("xlink:href", "images/madrid.png")
 
     svg6.append("svg:image")
         .attr("x", 825)
         .attr("y", 0)
         .attr("width", 30)
         .attr('height', 30)
-        .attr("xlink:href", "liverpool.png")
+        .attr("xlink:href", "images/liverpool.png")
 
     svg6.append('text')
         .attr('dx', 700)
@@ -54,7 +54,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .attr("y", 10)
         .attr("width", 20)
         .attr('height', 20)
-        .attr("xlink:href", "kicking.png")
+        .attr("xlink:href", "images/kicking.png")
 
     svg6.append('text')
         .attr('dx', 1035)
@@ -71,7 +71,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .attr("y", 10)
         .attr("width", 20)
         .attr('height', 20)
-        .attr("xlink:href", "favicon_3.png")
+        .attr("xlink:href", "images/favicon_3.png")
 
     svg6.append('text')
         .attr('dx', 1100)
