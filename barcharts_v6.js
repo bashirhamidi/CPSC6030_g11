@@ -1254,7 +1254,10 @@ d3.json("18245_madrid.json").then(function (dataset) {
 
     console.log(d3.max(stats, d => d.id))
 
-    svg4.append('rect')
+    let button_col = []; //create an empty object
+    console.log(button_col)
+
+    svg4.append('rect') //player 12
         .attr("x", 0)
         .attr('y', 0)
         .attr('width', width4)
@@ -1279,9 +1282,21 @@ d3.json("18245_madrid.json").then(function (dataset) {
             button = 12
             stat(button)
             console.log(button)
+            if (button_col.length > 1) {
+                console.log("previous color", button_col[button_col.length - 1])
+            }
+            console.log(button_col)
+            d3.select(".selectedstat")
+                .classed("selectedstat", false)
+                .style("fill", button_col[button_col.length - 1])
+            d3.select(this)
+                .classed("selectedstat", true)
+                .style("fill", "black")
+            let loop_col = (d3.select(this).attr("fill"))
+            button_col.push(loop_col)
+            console.log(button_col)
         })
-
-    svg4.append("circle")
+    svg4.append("circle") //player 4
         .attr("cx", 50)
         .attr("cy", 90)
         .attr("r", 15)
@@ -1299,8 +1314,21 @@ d3.json("18245_madrid.json").then(function (dataset) {
             button = 4
             stat(button)
             console.log(button)
+            if (button_col.length > 1) {
+                console.log("previous color", button_col[button_col.length - 1])
+            }
+            console.log(button_col)
+            d3.select(".selectedstat")
+                .classed("selectedstat", false)
+                .style("fill", button_col[button_col.length - 1])
+            d3.select(this)
+                .classed("selectedstat", true)
+                .style("fill", "black")
+            let loop_col = (d3.select(this).attr("fill"))
+            button_col.push(loop_col)
+            console.log(button_col)
         })
-    svg4.append("circle")
+    svg4.append("circle") //player 5
         .attr("cx", 50)
         .attr("cy", 130)
         .attr("r", 15)
@@ -1318,8 +1346,21 @@ d3.json("18245_madrid.json").then(function (dataset) {
             button = 5
             stat(button)
             console.log(button)
+            if (button_col.length > 1) {
+                console.log("previous color", button_col[button_col.length - 1])
+            }
+            console.log(button_col)
+            d3.select(".selectedstat")
+                .classed("selectedstat", false)
+                .style("fill", button_col[button_col.length - 1])
+            d3.select(this)
+                .classed("selectedstat", true)
+                .style("fill", "black")
+            let loop_col = (d3.select(this).attr("fill"))
+            button_col.push(loop_col)
+            console.log(button_col)
         })
-    svg4.append("circle")
+    svg4.append("circle") //player 2
         .attr("cx", 50)
         .attr("cy", 170)
         .attr("r", 15)
@@ -1337,8 +1378,21 @@ d3.json("18245_madrid.json").then(function (dataset) {
             button = 2
             stat(button)
             console.log(button)
+            if (button_col.length > 1) {
+                console.log("previous color", button_col[button_col.length - 1])
+            }
+            console.log(button_col)
+            d3.select(".selectedstat")
+                .classed("selectedstat", false)
+                .style("fill", button_col[button_col.length - 1])
+            d3.select(this)
+                .classed("selectedstat", true)
+                .style("fill", "black")
+            let loop_col = (d3.select(this).attr("fill"))
+            button_col.push(loop_col)
+            console.log(button_col)
         })
-    svg4.append("circle")
+    svg4.append("circle") //player 8
         .attr("cx", 125)
         .attr("cy", 70)
         .attr("r", 15)
@@ -1356,6 +1410,19 @@ d3.json("18245_madrid.json").then(function (dataset) {
             button = 8
             stat(button)
             console.log(button)
+            if (button_col.length > 1) {
+                console.log("previous color", button_col[button_col.length - 1])
+            }
+            console.log(button_col)
+            d3.select(".selectedstat")
+                .classed("selectedstat", false)
+                .style("fill", button_col[button_col.length - 1])
+            d3.select(this)
+                .classed("selectedstat", true)
+                .style("fill", "black")
+            let loop_col = (d3.select(this).attr("fill"))
+            button_col.push(loop_col)
+            console.log(button_col)
         })
     svg4.append("circle")
         .attr("cx", 125)
@@ -1375,6 +1442,19 @@ d3.json("18245_madrid.json").then(function (dataset) {
             button = 14
             stat(button)
             console.log(button)
+            if (button_col.length > 1) {
+                console.log("previous color", button_col[button_col.length - 1])
+            }
+            console.log(button_col)
+            d3.select(".selectedstat")
+                .classed("selectedstat", false)
+                .style("fill", button_col[button_col.length - 1])
+            d3.select(this)
+                .classed("selectedstat", true)
+                .style("fill", "black")
+            let loop_col = (d3.select(this).attr("fill"))
+            button_col.push(loop_col)
+            console.log(button_col)
         })
     svg4.append("circle")
         .attr("cx", 125)
@@ -1394,6 +1474,19 @@ d3.json("18245_madrid.json").then(function (dataset) {
             button = 10
             stat(button)
             console.log(button)
+            if (button_col.length > 1) {
+                console.log("previous color", button_col[button_col.length - 1])
+            }
+            console.log(button_col)
+            d3.select(".selectedstat")
+                .classed("selectedstat", false)
+                .style("fill", button_col[button_col.length - 1])
+            d3.select(this)
+                .classed("selectedstat", true)
+                .style("fill", "black")
+            let loop_col = (d3.select(this).attr("fill"))
+            button_col.push(loop_col)
+            console.log(button_col)
         })
     svg4.append("circle")
         .attr("cx", 200)
@@ -1413,6 +1506,19 @@ d3.json("18245_madrid.json").then(function (dataset) {
             button = 7
             stat(button)
             console.log(button)
+            if (button_col.length > 1) {
+                console.log("previous color", button_col[button_col.length - 1])
+            }
+            console.log(button_col)
+            d3.select(".selectedstat")
+                .classed("selectedstat", false)
+                .style("fill", button_col[button_col.length - 1])
+            d3.select(this)
+                .classed("selectedstat", true)
+                .style("fill", "black")
+            let loop_col = (d3.select(this).attr("fill"))
+            button_col.push(loop_col)
+            console.log(button_col)
         })
     svg4.append("circle")
         .attr("cx", 200)
@@ -1432,6 +1538,19 @@ d3.json("18245_madrid.json").then(function (dataset) {
             button = 22
             stat(button)
             console.log(button)
+            if (button_col.length > 1) {
+                console.log("previous color", button_col[button_col.length - 1])
+            }
+            console.log(button_col)
+            d3.select(".selectedstat")
+                .classed("selectedstat", false)
+                .style("fill", button_col[button_col.length - 1])
+            d3.select(this)
+                .classed("selectedstat", true)
+                .style("fill", "black")
+            let loop_col = (d3.select(this).attr("fill"))
+            button_col.push(loop_col)
+            console.log(button_col)
         })
     svg4.append("circle")
         .attr("cx", 200)
@@ -1452,6 +1571,19 @@ d3.json("18245_madrid.json").then(function (dataset) {
             button = 9
             stat(button)
             console.log(button)
+            if (button_col.length > 1) {
+                console.log("previous color", button_col[button_col.length - 1])
+            }
+            console.log(button_col)
+            d3.select(".selectedstat")
+                .classed("selectedstat", false)
+                .style("fill", button_col[button_col.length - 1])
+            d3.select(this)
+                .classed("selectedstat", true)
+                .style("fill", "black")
+            let loop_col = (d3.select(this).attr("fill"))
+            button_col.push(loop_col)
+            console.log(button_col)
         })
 
     svg4.append("circle") //substitute #6
@@ -1473,6 +1605,19 @@ d3.json("18245_madrid.json").then(function (dataset) {
             button = 6
             stat(button)
             console.log(button)
+            if (button_col.length > 1) {
+                console.log("previous color", button_col[button_col.length - 1])
+            }
+            console.log(button_col)
+            d3.select(".selectedstat")
+                .classed("selectedstat", false)
+                .style("fill", button_col[button_col.length - 1])
+            d3.select(this)
+                .classed("selectedstat", true)
+                .style("fill", "black")
+            let loop_col = (d3.select(this).attr("fill"))
+            button_col.push(loop_col)
+            console.log(button_col)
         })
     svg4.append("circle") //substitute #20
         .attr("cx", 450)
@@ -1493,8 +1638,21 @@ d3.json("18245_madrid.json").then(function (dataset) {
             button = 20
             stat(button)
             console.log(button)
+            if (button_col.length > 1) {
+                console.log("previous color", button_col[button_col.length - 1])
+            }
+            console.log(button_col)
+            d3.select(".selectedstat")
+                .classed("selectedstat", false)
+                .style("fill", button_col[button_col.length - 1])
+            d3.select(this)
+                .classed("selectedstat", true)
+                .style("fill", "black")
+            let loop_col = (d3.select(this).attr("fill"))
+            button_col.push(loop_col)
+            console.log(button_col)
         })
-    svg4.append("circle") //substitute #10
+    svg4.append("circle") //substitute #11
         .attr("cx", 450)
         .attr("cy", 150)
         .attr("r", 15)
@@ -1513,8 +1671,20 @@ d3.json("18245_madrid.json").then(function (dataset) {
             button = 11
             stat(button)
             console.log(button)
+            if (button_col.length > 1) {
+                console.log("previous color", button_col[button_col.length - 1])
+            }
+            console.log(button_col)
+            d3.select(".selectedstat")
+                .classed("selectedstat", false)
+                .style("fill", button_col[button_col.length - 1])
+            d3.select(this)
+                .classed("selectedstat", true)
+                .style("fill", "black")
+            let loop_col = (d3.select(this).attr("fill"))
+            button_col.push(loop_col)
+            console.log(button_col)
         })
-
 
     //player numbers
     svg4.append("text")
