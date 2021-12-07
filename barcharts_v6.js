@@ -7,8 +7,8 @@ d3.json("18245_madrid.json").then(function (dataset) {
         width: 1350,
         height: window.innerHeight / 6, //200,
         margin: {
-            top: 10,
-            bottom: 10,
+            top: 0,
+            bottom: 11,
             right: 10,
             left: 50
         }
@@ -138,39 +138,6 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .range([dimensions.margin.left, dimensions.width - dimensions.margin.right]) //defines the pixels // starting from zero pixel and maximum value is what we have set for the graph at the top of script  
         .padding(0.2)
 
-    var svg5 = d3.select('#img')
-        .style("width", dimensions.width + dimensions.margin.left + dimensions.margin.right)
-        .style("height", window.innerHeight / 50)
-        .append("g")
-        .attr("transform", "translate(" + dimensions.margin.left + "," + 0 + ")")
-
-    svg5.append('rect')
-        .attr('width', dimensions.width)
-        .attr('height', window.innerHeight / 50)
-        .attr('fill', 'white')
-        .attr('opacity', 0.5)
-
-    svg5.selectAll("img")
-        .data([10, 14, 31, 32, 42, 44, 47, 59, 73, 81])
-        .enter()
-        .append("svg:image")
-        .attr("x", d => xScale1(d))
-        .attr("y", 4)
-        .attr("width", 16)
-        .attr('height', 16)
-        .attr("fill", "steelblue")
-        .attr("xlink:href", "images/kicking.png")
-
-    svg5.selectAll("img")
-        .data([50, 63, 82])
-        .enter()
-        .append("svg:image")
-        .attr("x", d => xScale1(d))
-        .attr("y", 4)
-        .attr("width", 12)
-        .attr('height', 12)
-        .attr("fill", "steelblue")
-        .attr("xlink:href", "images/favicon_3.png")
 
 
     var svg1 = d3.select("#chart")
@@ -313,7 +280,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
     //     .text("Minutes")
     var xAxis1 = svg1.append("g")
         .call(d3.axisBottom().scale(xScale1))
-        .style("transform", `translateY(${dimensions.height - dimensions.margin.top}px)`) //   
+        .style("transform", `translateY(${dimensions.height - dimensions.margin.bottom}px)`) //   
         .selectAll("text")
 
 
@@ -515,13 +482,49 @@ d3.json("18245_madrid.json").then(function (dataset) {
 
     svg1.append('text')
         .attr("class", "axis")
-        .attr("transform", "translate(" + (dimensions.margin.left - 35) + "," + (dimensions.height + 10) + ")")
+        .attr("transform", "translate(" + (dimensions.margin.left - 40) + "," + (dimensions.height + 5) + ")")
         .style("text-anchor", "middle")
         .style("font-size", "17px")
         .text("Minutes")
 
 
-    var plotscale = 700
+
+    var svg5 = d3.select('#img')
+        .style("width", dimensions.width + dimensions.margin.left + dimensions.margin.right)
+        .style("height", window.innerHeight / 50)
+        .append("g")
+        .attr("transform", "translate(" + dimensions.margin.left + "," + 0 + ")")
+
+    svg5.append('rect')
+        .attr('width', dimensions.width)
+        .attr('height', window.innerHeight / 50)
+        .attr('fill', 'white')
+        .attr('opacity', 0.5)
+
+    svg5.selectAll("img")
+        .data([10, 14, 31, 32, 42, 44, 47, 59, 73, 81])
+        .enter()
+        .append("svg:image")
+        .attr("x", d => xScale1(d))
+        .attr("y", 4)
+        .attr("width", 16)
+        .attr('height', 16)
+        .attr("fill", "steelblue")
+        .attr("xlink:href", "images/kicking.png")
+
+    svg5.selectAll("img")
+        .data([50, 63, 82])
+        .enter()
+        .append("svg:image")
+        .attr("x", d => xScale1(d))
+        .attr("y", 4)
+        .attr("width", 12)
+        .attr('height', 12)
+        .attr("fill", "steelblue")
+        .attr("xlink:href", "images/favicon_3.png")
+
+
+    var plotscale = 670
 
     var margin = {
         top: 10, //(plotscale * (14.86 / 960)),
@@ -532,6 +535,8 @@ d3.json("18245_madrid.json").then(function (dataset) {
     var width = plotscale - margin.left - margin.right
     var height = (plotscale * (68 / 105) - margin.top - margin.bottom)
     console.log(68 / 105, height / width)
+    console.log(height)
+    console.log(width)
 
     var x = d3.scaleLinear()
         .domain([0, 120])
@@ -1059,28 +1064,28 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .attr('color', 'grey')
 
     svg4.append("circle")
-        .attr('cx', -95)
+        .attr('cx', -(plotscale / 7.5))
         .attr('cy', 20)
         .attr("fill", "#157f3b") //            .attr("fill", "#2f7ebc")
         .attr("r", 6)
 
     svg4.append("text")
         //.attr("text-anchor", "middle")
-        .attr("dx", -85)
+        .attr("dx", -(plotscale / 8.5))
         .attr("dy", 25)
         .text("Start")
         .style("font-size", "12px")
 
 
     svg4.append("circle")
-        .attr('cx', -95)
+        .attr('cx', -(plotscale / 7.5))
         .attr('cy', 50)
         .attr("fill", "#CC0202") //            .attr("fill", "#2f7ebc")
         .attr("r", 6)
 
     svg4.append("text")
         //.attr("text-anchor", "middle")
-        .attr("dx", -85)
+        .attr("dx", -(plotscale / 8.5))
         .attr("dy", 55)
         .text("End")
         .style("font-size", "12px")
@@ -1813,10 +1818,10 @@ d3.json("18245_madrid.json").then(function (dataset) {
     var x_passing_accuracy = d3.scaleLinear()
         .domain([0, d3.max(stats, d => d.passing_accuracy)])
         .range([margin.left, 300])
-
     var x_passes_attempted = d3.scaleLinear()
         .domain([0, d3.max(stats, d => d.passes_attempted)])
-        .range([margin.left, 300])
+        .range([margin.left, 300]) //(width - (width / 2))
+
     console.log(x_passes_completed(25))
 
     var x_shots_taken = d3.scaleLinear()
@@ -1858,7 +1863,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
     svg4.append('text')
         //.attr("text-anchor", "middle")
         .attr("dx", 20)
-        .attr("dy", 230)
+        .attr("dy", (plotscale / 3)) //230 +25
         .text('GOALS :')
         .attr('font-size', "15px")
         .style("fill", "black")
@@ -1866,7 +1871,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
     svg4.append('text')
         //.attr("text-anchor", "middle")
         .attr("dx", 20)
-        .attr("dy", 255)
+        .attr("dy", (plotscale / 3) + 25) //255 +25
         .text('ASSISTS :')
         .attr('font-size', "15px")
         .style("fill", "black")
@@ -1874,7 +1879,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
     svg4.append('text')
         //.attr("text-anchor", "middle")
         .attr("dx", 20)
-        .attr("dy", 280)
+        .attr("dy", (plotscale / 3) + 50) //280 +35
         .text('SHOTS :')
         .attr('font-size', "15px")
         .style("fill", "black")
@@ -1882,7 +1887,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
     svg4.append('text')
         //.attr("text-anchor", "middle")
         .attr("dx", 20)
-        .attr("dy", 315)
+        .attr("dy", (plotscale / 3) + 75) //315 +50
         .text('ATTEMPTED PASSES')
         .attr('font-size', "15px")
         .style("fill", "black")
@@ -1890,7 +1895,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
     svg4.append('text')
         //.attr("text-anchor", "middle")
         .attr("dx", 20)
-        .attr("dy", 365)
+        .attr("dy", (plotscale / 3) + 120) //365 +50
         .text('COMPLETED PASSES')
         .attr('font-size', "15px")
         .style("fill", "black")
@@ -1898,7 +1903,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
     svg4.append('text')
         //.attr("text-anchor", "middle")
         .attr("dx", 20)
-        .attr("dy", 415)
+        .attr("dy", (plotscale / 3) + 165) //415
         .text('PASSING ACCURACY')
         .attr('font-size', "15px")
         .style("fill", "black")
@@ -1935,7 +1940,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
             .attr("id", "id1")
             .data(stats.filter(d => d.id == button))
             .attr("x", 20)
-            .attr("y", 370)
+            .attr("y", ((plotscale / 3) + 125)) //370
             .attr("width", function (d) {
                 return x_passes_completed(d.passes_completed)
             })
@@ -1946,7 +1951,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
             .attr("id", "id2")
             .data(stats.filter(d => d.id == button))
             .attr("x", 20)
-            .attr("y", 320)
+            .attr("y", ((plotscale / 3) + 80)) //320
             .attr("width", function (d) {
                 return x_passes_attempted(d.passes_attempted)
             })
@@ -1957,7 +1962,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
             .attr("id", "id3")
             .data(stats.filter(d => d.id == button))
             .attr("x", 20)
-            .attr("y", 420)
+            .attr("y", ((plotscale / 3) + 170)) //420
             .attr("width", function (d) {
                 return x_passing_accuracy(d.passing_accuracy)
             })
@@ -1969,7 +1974,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
             .attr("id", "id4")
             .data(stats.filter(d => d.id == button))
             .attr("dx", 20)
-            .attr("dy", 230)
+            .attr("dy", (plotscale / 3)) //230
             .text(function (d) {
                 return ('GOALS : ' + d.goals)
             })
@@ -1982,7 +1987,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
             //.attr("text-anchor", "middle")
             .data(stats.filter(d => d.id == button))
             .attr("dx", 20)
-            .attr("dy", 255)
+            .attr("dy", ((plotscale / 3) + 25)) //255
             .text(function (d) {
                 return ('ASSISTS : ' + d.assists)
             })
@@ -1995,7 +2000,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
             //.attr("text-anchor", "middle")
             .data(stats.filter(d => d.id == button))
             .attr("dx", 20)
-            .attr("dy", 280)
+            .attr("dy", ((plotscale / 3) + 50)) //280
             .text(function (d) {
                 return ('SHOTS : ' + d.shots_taken)
             })
@@ -2010,7 +2015,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
             .attr("dx", function (d) {
                 return x_passes_attempted(d.passes_attempted)
             })
-            .attr("dy", 335)
+            .attr("dy", ((plotscale / 3) + 95)) //335
             .text(function (d) {
                 return (d.passes_attempted)
             })
@@ -2027,7 +2032,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
             .attr("dx", function (d) {
                 return x_passes_completed(d.passes_completed)
             })
-            .attr("dy", 385)
+            .attr("dy", ((plotscale / 3) + 140)) //385
             .text(function (d) {
                 return (d.passes_completed)
             })
@@ -2044,7 +2049,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
             .attr("dx", function (d) {
                 return x_passing_accuracy(d.passing_accuracy)
             })
-            .attr("dy", 435)
+            .attr("dy", (plotscale / 3) + 185) //435
             .text(function (d) {
                 return (d.passing_accuracy) + '%'
             })
