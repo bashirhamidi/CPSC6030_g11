@@ -156,8 +156,8 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .append("svg:image")
         .attr("x", d => xScale1(d))
         .attr("y", 4)
-        .attr("width", 12)
-        .attr('height', 12)
+        .attr("width", 16)
+        .attr('height', 16)
         .attr("fill", "steelblue")
         .attr("xlink:href", "images/kicking.png")
 
@@ -167,8 +167,8 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .append("svg:image")
         .attr("x", d => xScale1(d))
         .attr("y", 4)
-        .attr("width", 10)
-        .attr('height', 10)
+        .attr("width", 12)
+        .attr('height', 12)
         .attr("fill", "steelblue")
         .attr("xlink:href", "images/favicon_3.png")
 
@@ -322,7 +322,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         height: window.innerHeight / 4, //400,
         margin: {
             top: 0, //10,
-            bottom: 10, //20,
+            bottom: 0, //20,
             right: 10,
             left: 50
         }
@@ -434,13 +434,14 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .append("circle")
         .attr("cx", d => xScale2(d.minute))
         .attr("cy", function (d) {
-            if ((d.pass.outcome == null) && (d.team.name == "Real Madrid")) {
-                output = (jersey_numbers[d.player.id])
-                return yScale2("" + output)
-            }
-            else { return -100 }
+                if ((d.pass.outcome == null) && (d.team.name == "Real Madrid")) {
+                    output = (jersey_numbers[d.player.id])
+                    return yScale2("" + output)
+                } else {
+                    return -100
+                }
 
-        }
+            }
 
 
         )
@@ -520,12 +521,12 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .text("Minutes")
 
 
-    var plotscale = 750
+    var plotscale = 700
 
     var margin = {
-        top: (plotscale * (14.86 / 960)),
+        top: 10, //(plotscale * (14.86 / 960)),
         right: (plotscale * (20 / 960)),
-        bottom: (plotscale * (24 / 960)),
+        bottom: 0, //(plotscale * (24 / 960)),
         left: (plotscale * (100 / 960))
     }
     var width = plotscale - margin.left - margin.right
@@ -985,7 +986,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
             })
             .attr('font-size', "15px")
             .attr("transform", "translate(0,5)")
-            .attr("fill","white")
+            .attr("fill", "white")
 
         //(d.pass.outcome == null) || (d.team.name == "Real Madrid")) {
         //  if (jersey_numbers[d.player.id] != 1) {
@@ -1058,187 +1059,187 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .attr('color', 'grey')
 
     svg4.append("circle")
-        .attr('cx', -100)
+        .attr('cx', -95)
         .attr('cy', 20)
         .attr("fill", "#157f3b") //            .attr("fill", "#2f7ebc")
         .attr("r", 6)
-       
-       svg4.append("text")
+
+    svg4.append("text")
         //.attr("text-anchor", "middle")
-        .attr("dx", -90)
+        .attr("dx", -85)
         .attr("dy", 25)
         .text("Start")
         .style("font-size", "12px")
-    
+
 
     svg4.append("circle")
-        .attr('cx', -100)
+        .attr('cx', -95)
         .attr('cy', 50)
         .attr("fill", "#CC0202") //            .attr("fill", "#2f7ebc")
         .attr("r", 6)
 
     svg4.append("text")
         //.attr("text-anchor", "middle")
-        .attr("dx", -90)
+        .attr("dx", -85)
         .attr("dy", 55)
         .text("End")
         .style("font-size", "12px")
 
 
     var stats = [{
-        'player': 5597,
-        'id': 1,
-        'passes_completed': 14,
-        'passes_attempted': 22,
-        'passing_accuracy': 63.63,
-        'shot_assists': 0,
-        'shots_taken': 0,
-        'assists': 0,
-        'goals': 0
-    },
-    {
-        'player': 5721,
-        'id': 2,
-        'passes_completed': 24,
-        'passes_attempted': 30,
-        'passing_accuracy': 80,
-        'shot_assists': 1,
-        'shots_taken': 0,
-        'assists': 0,
-        'goals': 0
-    },
-    {
-        'player': 5485,
-        'id': 5,
-        'passes_completed': 52,
-        'passes_attempted': 57,
-        'passing_accuracy': 91.22,
-        'shot_assists': 0,
-        'shots_taken': 0,
-        'assists': 0,
-        'goals': 0
-    },
-    {
-        'player': 5201,
-        'id': 4,
-        'passes_completed': 77,
-        'passes_attempted': 80,
-        'passing_accuracy': 96.26,
-        'shot_assists': 0,
-        'shots_taken': 0,
-        'assists': 0,
-        'goals': 0
-    },
-    {
-        'player': 5552,
-        'id': 12,
-        'passes_completed': 70,
-        'passes_attempted': 83,
-        'passing_accuracy': 84.33,
-        'shot_assists': 1,
-        'shots_taken': 1,
-        'assists': 2,
-        'goals': 0
-    },
-    {
-        'player': 5539,
-        'id': 14,
-        'passes_completed': 33,
-        'passes_attempted': 35,
-        'passing_accuracy': 94.28,
-        'shot_assists': 1,
-        'shots_taken': 0,
-        'assists': 0,
-        'goals': 0
-    },
-    {
-        'player': 5463,
-        'id': 10,
-        'passes_completed': 66,
-        'passes_attempted': 70,
-        'passing_accuracy': 94.28,
-        'shot_assists': 0,
-        'shots_taken': 1,
-        'assists': 0,
-        'goals': 0
-    },
-    {
-        'player': 5574,
-        'id': 8,
-        'passes_completed': 83,
-        'passes_attempted': 89,
-        'passing_accuracy': 93.25,
-        'shot_assists': 1,
-        'shots_taken': 0,
-        'assists': 0,
-        'goals': 0
-    },
-    {
-        'player': 4926,
-        'id': 22,
-        'passes_completed': 46,
-        'passes_attempted': 49,
-        'passing_accuracy': 93.87,
-        'shot_assists': 0,
-        'shots_taken': 2,
-        'assists': 0,
-        'goals': 0
-    },
-    {
-        'player': 19677,
-        'id': 9,
-        'passes_completed': 35,
-        'passes_attempted': 38,
-        'passing_accuracy': 92.1,
-        'shot_assists': 2,
-        'shots_taken': 4,
-        'assists': 0,
-        'goals': 1
-    },
-    {
-        'player': 5207,
-        'id': 7,
-        'passes_completed': 33,
-        'passes_attempted': 34,
-        'passing_accuracy': 97.05,
-        'shot_assists': 0,
-        'shots_taken': 3,
-        'assists': 0,
-        'goals': 0
-    },
-    {
-        'player': 6399,
-        'id': 11,
-        'passes_completed': 7,
-        'passes_attempted': 8,
-        'passing_accuracy': 87.5,
-        'shot_assists': 1,
-        'shots_taken': 2,
-        'assists': 0,
-        'goals': 2
-    },
-    {
-        'player': 5202,
-        'id': 6,
-        'passes_completed': 45,
-        'passes_attempted': 50,
-        'passing_accuracy': 90,
-        'shot_assists': 1,
-        'shots_taken': 1,
-        'assists': 0,
-        'goals': 0
-    },
-    {
-        'player': 5719,
-        'id': 20,
-        'passes_completed': 1,
-        'passes_attempted': 2,
-        'passing_accuracy': 50,
-        'shot_assists': 0,
-        'shots_taken': 0,
-        'assists': 0,
-        'goals': 0
-    }
+            'player': 5597,
+            'id': 1,
+            'passes_completed': 14,
+            'passes_attempted': 22,
+            'passing_accuracy': 63.63,
+            'shot_assists': 0,
+            'shots_taken': 0,
+            'assists': 0,
+            'goals': 0
+        },
+        {
+            'player': 5721,
+            'id': 2,
+            'passes_completed': 24,
+            'passes_attempted': 30,
+            'passing_accuracy': 80,
+            'shot_assists': 1,
+            'shots_taken': 0,
+            'assists': 0,
+            'goals': 0
+        },
+        {
+            'player': 5485,
+            'id': 5,
+            'passes_completed': 52,
+            'passes_attempted': 57,
+            'passing_accuracy': 91.22,
+            'shot_assists': 0,
+            'shots_taken': 0,
+            'assists': 0,
+            'goals': 0
+        },
+        {
+            'player': 5201,
+            'id': 4,
+            'passes_completed': 77,
+            'passes_attempted': 80,
+            'passing_accuracy': 96.26,
+            'shot_assists': 0,
+            'shots_taken': 0,
+            'assists': 0,
+            'goals': 0
+        },
+        {
+            'player': 5552,
+            'id': 12,
+            'passes_completed': 70,
+            'passes_attempted': 83,
+            'passing_accuracy': 84.33,
+            'shot_assists': 1,
+            'shots_taken': 1,
+            'assists': 2,
+            'goals': 0
+        },
+        {
+            'player': 5539,
+            'id': 14,
+            'passes_completed': 33,
+            'passes_attempted': 35,
+            'passing_accuracy': 94.28,
+            'shot_assists': 1,
+            'shots_taken': 0,
+            'assists': 0,
+            'goals': 0
+        },
+        {
+            'player': 5463,
+            'id': 10,
+            'passes_completed': 66,
+            'passes_attempted': 70,
+            'passing_accuracy': 94.28,
+            'shot_assists': 0,
+            'shots_taken': 1,
+            'assists': 0,
+            'goals': 0
+        },
+        {
+            'player': 5574,
+            'id': 8,
+            'passes_completed': 83,
+            'passes_attempted': 89,
+            'passing_accuracy': 93.25,
+            'shot_assists': 1,
+            'shots_taken': 0,
+            'assists': 0,
+            'goals': 0
+        },
+        {
+            'player': 4926,
+            'id': 22,
+            'passes_completed': 46,
+            'passes_attempted': 49,
+            'passing_accuracy': 93.87,
+            'shot_assists': 0,
+            'shots_taken': 2,
+            'assists': 0,
+            'goals': 0
+        },
+        {
+            'player': 19677,
+            'id': 9,
+            'passes_completed': 35,
+            'passes_attempted': 38,
+            'passing_accuracy': 92.1,
+            'shot_assists': 2,
+            'shots_taken': 4,
+            'assists': 0,
+            'goals': 1
+        },
+        {
+            'player': 5207,
+            'id': 7,
+            'passes_completed': 33,
+            'passes_attempted': 34,
+            'passing_accuracy': 97.05,
+            'shot_assists': 0,
+            'shots_taken': 3,
+            'assists': 0,
+            'goals': 0
+        },
+        {
+            'player': 6399,
+            'id': 11,
+            'passes_completed': 7,
+            'passes_attempted': 8,
+            'passing_accuracy': 87.5,
+            'shot_assists': 1,
+            'shots_taken': 2,
+            'assists': 0,
+            'goals': 2
+        },
+        {
+            'player': 5202,
+            'id': 6,
+            'passes_completed': 45,
+            'passes_attempted': 50,
+            'passing_accuracy': 90,
+            'shot_assists': 1,
+            'shots_taken': 1,
+            'assists': 0,
+            'goals': 0
+        },
+        {
+            'player': 5719,
+            'id': 20,
+            'passes_completed': 1,
+            'passes_attempted': 2,
+            'passing_accuracy': 50,
+            'shot_assists': 0,
+            'shots_taken': 0,
+            'assists': 0,
+            'goals': 0
+        }
     ]
 
 
@@ -1272,7 +1273,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .attr("stroke-width", 2)
-                .attr("stroke", "white")
+                .attr("stroke", "black")
         })
         .on('mouseout', function () {
             d3.select(this)
@@ -1304,7 +1305,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .attr("stroke-width", 2)
-                .attr("stroke", "white")
+                .attr("stroke", "black")
         })
         .on('mouseout', function () {
             d3.select(this)
@@ -1336,7 +1337,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .attr("stroke-width", 2)
-                .attr("stroke", "white")
+                .attr("stroke", "black")
         })
         .on('mouseout', function () {
             d3.select(this)
@@ -1368,7 +1369,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .attr("stroke-width", 2)
-                .attr("stroke", "white")
+                .attr("stroke", "black")
         })
         .on('mouseout', function () {
             d3.select(this)
@@ -1400,7 +1401,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .attr("stroke-width", 2)
-                .attr("stroke", "white")
+                .attr("stroke", "black")
         })
         .on('mouseout', function () {
             d3.select(this)
@@ -1432,7 +1433,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .attr("stroke-width", 2)
-                .attr("stroke", "white")
+                .attr("stroke", "black")
         })
         .on('mouseout', function () {
             d3.select(this)
@@ -1464,7 +1465,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .attr("stroke-width", 2)
-                .attr("stroke", "white")
+                .attr("stroke", "black")
         })
         .on('mouseout', function () {
             d3.select(this)
@@ -1496,7 +1497,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .attr("stroke-width", 2)
-                .attr("stroke", "white")
+                .attr("stroke", "black")
         })
         .on('mouseout', function () {
             d3.select(this)
@@ -1528,7 +1529,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .attr("stroke-width", 2)
-                .attr("stroke", "white")
+                .attr("stroke", "black")
         })
         .on('mouseout', function () {
             d3.select(this)
@@ -1561,7 +1562,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .attr("stroke-width", 2)
-                .attr("stroke", "white")
+                .attr("stroke", "black")
         })
         .on('mouseout', function () {
             d3.select(this)
@@ -1595,7 +1596,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .attr("stroke-width", 2)
-                .attr("stroke", "white")
+                .attr("stroke", "black")
         })
         .on('mouseout', function () {
             d3.select(this)
@@ -1628,7 +1629,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .attr("stroke-width", 2)
-                .attr("stroke", "white")
+                .attr("stroke", "black")
         })
         .on('mouseout', function () {
             d3.select(this)
@@ -1661,7 +1662,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         .on('mouseover', function (d, i) {
             d3.select(this)
                 .attr("stroke-width", 2)
-                .attr("stroke", "white")
+                .attr("stroke", "black")
         })
         .on('mouseout', function () {
             d3.select(this)
