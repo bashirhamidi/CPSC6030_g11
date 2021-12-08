@@ -10,9 +10,28 @@
 //     fill: rgb(255, 0, 0);
 // }
 
+// .fp-slidesNav.fp-bottom {
+//     bottom: 17px;
+//     margin-left: 5em !important;
+// }
+
+.fp-controlArrow.fp-prev {
+    left: 50px !important;
+    width: 0;
+    border-width: 38.5px 34px 38.5px 0;
+    border-color: transparent rgb(0, 0, 0) transparent transparent;
+}
+
+.fp-controlArrow.fp-next {
+    right: 60px !important;
+    border-width: 38.5px 0 38.5px 34px;
+    border-color: transparent transparent transparent rgb(0, 0, 0);
+}
+
+
 .selected {
     //fill: red !important;
-    stroke: rgb(147, 238, 138) !important;
+    stroke: rgb(70, 130, 180) !important; //rgb(147, 238, 138)
 }
 
 .tab {
@@ -42,67 +61,69 @@ h1 {
     border-left: 2em;
 }
 
-.p1 {
-    //color: rgb(207, 29, 29);
-    //margin-left: 6em;
-    font-family: 'Arial';
-    text-align: left;
-    vertical-align: top;
-    margin: 2em;
-    font-size: 2rem;
-    border-left: 2em;
-}
+// .p1 {
+//     //color: rgb(207, 29, 29);
+//     //margin-left: 6em;
+//     font-family: 'Arial';
+//     text-align: left;
+//     vertical-align: top;
+//     margin-top: 0em;
+//     margin-left: 10em;
+//     margin-right: 10em;
+//     font-size: 1rem;
+//     border-left: 2em;
+// }
 
-.p2 {
-    font-family: 'Arial';
-    text-align: left;
-    vertical-align: top;
-    margin: 0em;
-    font-size: 2rem;
-}
+// .p2 {
+//     font-family: 'Arial';
+//     text-align: left;
+//     vertical-align: top;
+//     margin: 0em;
+//     font-size: 2rem;
+// }
 
-.button_default {
-    background-color: #4CAF50;
-    /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
+// .button_default {
+//     background-color: #4CAF50;
+//     /* Green */
+//     border: none;
+//     color: white;
+//     padding: 15px 32px;
+//     text-align: center;
+//     text-decoration: none;
+//     display: inline-block;
+//     font-size: 16px;
+// }
 
-.button_discourage {
-    background-color: rgb(150, 63, 63);
-    /* Green */
-    border: rgba(218, 220, 224, 1);
-    color: rgba(26, 115, 232, 1);
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    // below is from Google Chrome scheme
-    border-radius: 4px;
-    border: 1px solid var(--border-color);
-    box-sizing: border-box;
-    align-items: center;
-    --paper-ripple-opacity: var(--ripple-opacity);
-    -webkit-tap-highlight-color: transparent;
-    cursor: pointer;
-    display: inline-flex;
-    flex-shrink: 0;
-    font-weight: 500;
-    height: var(--cr-button-height);
-    justify-content: center;
-    min-width: 5.14em;
-    outline-width: 0;
-    overflow: hidden;
-    padding: 8px 16px;
-    position: relative;
-    user-select: none;
-}
+// .button_discourage {
+//     background-color: rgb(150, 63, 63);
+//     /* Green */
+//     border: rgba(218, 220, 224, 1);
+//     color: rgba(26, 115, 232, 1);
+//     padding: 15px 32px;
+//     text-align: center;
+//     text-decoration: none;
+//     display: inline-block;
+//     font-size: 16px;
+//     // below is from Google Chrome scheme
+//     border-radius: 4px;
+//     border: 1px solid var(--border-color);
+//     box-sizing: border-box;
+//     align-items: center;
+//     --paper-ripple-opacity: var(--ripple-opacity);
+//     -webkit-tap-highlight-color: transparent;
+//     cursor: pointer;
+//     display: inline-flex;
+//     flex-shrink: 0;
+//     font-weight: 500;
+//     height: var(--cr-button-height);
+//     justify-content: center;
+//     min-width: 5.14em;
+//     outline-width: 0;
+//     overflow: hidden;
+//     padding: 8px 16px;
+//     position: relative;
+//     user-select: none;
+// }
 
 .s1 {
     h1 {
@@ -159,6 +180,103 @@ h1 {
         font-size: 4rem;
     }
 
+    h2 {
+        text-align: left;
+        margin-left: 5em;
+        font-size: 3rem;
+    }
+
+    .p1 {
+        text-align: left;
+        //margin: 50pt; //margin is not working... Figured it out. Can't use body tag, it has to be paragraph p
+        //margin-left: 6em;
+        font-size: 1.5rem;
+        margin-top: 0em;
+        margin-left: 10em;
+        margin-right: 10em;
+
+    }
+
+    .p2 {
+        text-align: left;
+        margin: 50pt; //margin is not working... Figured it out. Can't use body tag, it has to be paragraph p
+        //margin-left: 6em;
+        font-size: 1.7rem;
+
+    }
+
+    img {
+        max-height: 250px;
+        width: auto;
+        text-align: center !important;
+        display: block;
+        justify-content: center !important;
+    }
+
+    // .img1 {
+    //     max-height: 250px;
+    //     width: auto;
+    // }
+
+    // .img2 {
+    //     max-height: 250px;
+    //     width: auto;
+    // }
+
+    // .img3 {
+    //     max-height: 250px;
+    //     width: auto;
+    // }
+
+    // .img4 {
+    //     max-height: 250px;
+    //     width: auto;
+    // }
+
+
+    // h1 {
+    //     text-align: left;
+    //     margin-left: 50pt;
+    //     font-size: 4rem;
+    // }
+
+    // h2 {
+    //     text-align: left;
+    //     margin-left: 500pt;
+    //     font-size: 2rem;
+
+    // }
+
+
+    // p1 {
+    //     //color: rgb(207, 29, 29);
+    //     //margin-left: 6em;
+    //     font-family: 'Arial';
+    //     text-align: left;
+    //     vertical-align: top;
+    //     margin-left: 10em !important;
+    //     margin-right: 10em !important;
+    //     margin-top: 0em !important;
+    //     font-size: 1rem;
+    //     // border-left: 10em;
+    // }
+
+    // p2 {
+    //     text-align: left;
+    //     margin: 100pt; //margin is not working... Figured it out. Can't use body tag, it has to be paragraph p
+    //     //margin-left: 6em;
+    //     font-size: 1.2rem;
+
+    // }
+}
+
+.s5 {
+    h1 {
+        text-align: left;
+        margin-left: 50pt;
+        font-size: 4rem;
+    }
+
     p {
         text-align: left;
         margin: 50pt; //margin is not working... Figured it out. Can't use body tag, it has to be paragraph p
@@ -168,7 +286,7 @@ h1 {
     }
 }
 
-.s5 {
+.s6 {
     h1 {
         text-align: left;
         margin-left: 50pt;
