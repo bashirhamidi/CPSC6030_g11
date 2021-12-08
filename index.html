@@ -26,16 +26,15 @@
                 questions:
             </p>
             <p>
-                <span class="tab"></span>1. How does passing behavior influence the outcome of a game?
-                <br> <br> <span class="tab"></span>2. What is the impact of different players in the overall performance
-                of
-                the game?
+                <span class="tab"></span>1. How do the passing dynamics differ between players within a game?
+                <br> <br> <span class="tab"></span>2. What is the impact of different passing styles on the overall
+                outcome of a game?
                 <br> <br> <span class="tab"></span>3. What are the passing styles and patterns of a particular team?
             </p>
 
             <p> <br> <br>
-                <br> <a href="#section2">Continue to learn more</a>
-                <br> <a href="#section4">Skip to dashboard</a>
+                <br> <a href="#Background">Continue to learn more</a>
+                <br> <a href="#Dashboard">Skip to dashboard</a>
             </p>
 
 
@@ -54,12 +53,20 @@
                     Visualization and Computer Graphics</a>. The idea behind the paper is to derive underlying patterns
                 in football passes to try to better understand the attacking styles. This helps in analyzing how players
                 build an attack using different passing tactics.
-                <br><br> ADD differences between the dataset here and dataset you had. What were the differences, what were
-                the limitations you had that prevented you to create a figure like the publication?
-            </p>
+                <br><span class="tab"></span>1. The dataset used in the paper was not publically available and we had to
+                search for a dataset which most
+                closely matches the data that was visualized in the paper.
+                There were a few limitations that prevented us in creating a dashboard similar to that in the paper:
+                Deep learning algorithms were used to generate convolution matrices and identify phases in a game. A
+                phase represented a brief stint of passes between a predefined set of players who were repeatedly
+                involved in such a stint.
+                <br><span class="tab"></span>2. The dataset used in the paper was not publically available and we had to
+                search for a dataset which most
+                closely matches the data that was visualized in the paper. However, the dataset used in our project did
+                not contain the player movement data without the ball. Hence we could not replicate the real time events
+                of the game in the pitch layout.
 
-            <p> <br>
-                <strong>Motivation:</strong>
+                <br><br><strong>Motivation:</strong>
                 <br> Football is a passing game. Although the outcome of a game is determined by the number of goals
                 scored, it wouldn’t be possible to score goals without passing the ball. It is also important to
                 acknowledge the fact that goal scoring is a team effort. The contributions of players in different
@@ -70,12 +77,9 @@
                 success of a team. This dashboard will clear this misconception and enable the viewer to have a better
                 understanding of the game and players’ importance represented through
                 passing dynamics.
-            </p>
-
-
-            <p> <br>
-                <br> <a href="#section3">Continue to learn more</a>
-                <br> <a href="#section4">Skip to dashboard</a>
+                <br>
+                <br> <a href="#About">Continue to learn more</a>
+                <br> <a href="#Dashboard">Skip to dashboard</a>
             </p>
 
         </section>
@@ -104,22 +108,145 @@
 
                 <br> Explore the dashboad and see if you can find any interesting patterns!
 
-                <br> <br> **ADD **
-                <br> - Figures introducing the dashboard. It does not have to be all the figures at once and can be in
-                pieces of the dashboard.
-                
-
 
             </p>
             <p class="p2">
-               <a href="#section4">Continue to dashboard</a>
+                <br><a href="#Guide">Continue to learn more</a>
+                <br><a href="#Dashboard">Skip to dashboard</a>
             </p>
+        </section>
+        <section class="section s4">
+            <h1>User Guide</h1>
+            <section class="slide">
+                <h2>Overview</h2>
+                <p class="p1">
 
+                    The dashboard has five subcomponents:
+                    <br><span class="tab"></span>1. a bar chart with the total number of passes per minute;
+                    <br><span class="tab"></span>2. a node graph with player-level passing information;
+                    <br><span class="tab"></span>3. a shot and goal graph indicating the interval for each;
+                    <br><span class="tab"></span>4. a bird’s eye view detailing the passing pattern;
+                    <br><span class="tab"></span>5. a statistics board showing the player-level statistics throughout
+                    the entire game.
+
+                    <br> <br>Use the directional arrows on the left and right and we will take you through each of these
+                    sub components here and describe to you the various
+                    interactions.
+                    <br><br><br><br>
+                </p>
+                <p class="p2"> <a href="#Dashboard">Skip to dashboard</a>
+                </p>
+            </section>
+
+            <section class="slide">
+                <h2>Bar chart</h2>
+                <p class="p1">
+
+                    The bar chart shows the total number of passes in every minute of the match for Real
+                    Madrid players. The X-axis ranges from the beginning of the game (minute 0) to the end of overtime
+                    (minute 92). There are a handful of minutes within the game that the opposing team, Liverpool, had
+                    complete possession of the ball, such as minute 2 as seen below. As a result, you may not see any
+                    bars within this figure for those minutes.
+
+                    <br><img src="images/guide/guide_01.png" alt="alt text">
+                </p>
+                <p class="p2"> <a href="#Dashboard">Skip to dashboard</a>
+                </p>
+            </section>
+
+            <section class="slide">
+                <h2>Bar chart: mouse-over</h2>
+                <p class="p1">
+                    If you hover over these bars you will notice that the outline of the bars change color, and a number
+                    appears on the top of the bars. The number indicates the total number of passes
+                    during that minute. Please note that this includes even the passes that were incomplete or
+                    intercepted by the opposing team.
+                    <br><img class="img" src="images/guide/guide_02.png" alt="alt text">
+                </p>
+                <p class="p2"> <a href="#Dashboard">Skip to dashboard</a>
+                </p>
+            </section>
+
+            <section class="slide">
+                <h2>Bar chart: click</h2>
+                <p class="p1">
+                    You can click on the bar chart which would further change the fill color of the bar, shown
+                    below. Clicking on the bar chart will allow you to explore the passing pattern during that
+                    time interval, which we will demonstrate to you shortly.
+                    <br><img class="img" src="images/guide/guide_03.png" alt="alt text">
+                </p>
+                <p class="p2"> <a href="#Dashboard">Skip to dashboard</a>
+                </p>
+            </section>
+
+            <section class="slide">
+                <h2>Nodes graph</h2>
+                <p class="p1">
+                    Below the bar chart you will notice similar bars overlayed by nodes shown below. The nodes denote
+                    that a player initiated at least one pass during that time interval. The horizontal lines represent
+                    all the Real Madrid players with their jersey numbers. The colors represent the position of the
+                    player within the team (defensive, midfield, and offensive). These same colors are used in other
+                    elements of the dashboard to denote player-level data and a legend is provided to you for
+                    convenience.
+                    <br><br><img class="img" src="images/guide/guide_04.png" alt="alt text">
+                </p>
+                <p class="p2"> <a href="#Dashboard">Skip to dashboard</a>
+                </p>
+            </section>
+
+            <section class="slide">
+                <h2>Goals and shots</h2>
+                <p class="p1">
+                    Between the bar chart and the detailed passing view, you will notice symbols for a “shot” as well as
+                    a “goal”. This will be helpful to you as you decide which minutes of the game you want
+                    to explore further. As you do this, also pay close attention to the minutes directly proceeding the
+                    goal. Do you find any interesting patterns?
+                    <br><br><img class="img" src="images/guide/guide_05.png" alt="alt text">
+                </p>
+                <p class="p2"> <a href="#Dashboard">Skip to dashboard</a>
+                </p>
+            </section>
+            <section class="slide">
+                <h2>Pitch and formation</h2>
+                <p class="p1">
+                    On the bottom left of the dashboard, you will find a bird’s eye view of the pitch shown below.
+                    Notice the starting formation as well as the player jersey numbers are shown here.
+                    <br><br><img class="img" src="images/guide/guide_06.png" alt="alt text">
+                </p>
+                <p class="p2"> <a href="#Dashboard">Skip to dashboard</a>
+                </p>
+            </section>
+            <section class="slide">
+                <h2>Passing pattern</h2>
+                <p class="p1">
+                    Once you select a time interval using the bar chart, a play passing pattern will be shown to you on
+                    the pitch (shown below). Player jersey numbers that you saw previously will continue to show here.
+                    As the legend indicates the pass is initiated by the green players and ends at the red players. In
+                    some cases, a player may be in possession of the ball and move, such as players 4 and 5 in this
+                    figure.
+                    <br><br><img class="img" src="images/guide/guide_07.png" alt="alt text">
+                </p>
+                <p class="p2"> <a href="#Dashboard">Skip to dashboard</a>
+                </p>
+            </section>
+            <section class="slide">
+                <h2>Statistics board</h2>
+                <p class="p1">
+                    On the bottom right of the dashboard you will notice a statistics board with the same player
+                    formation you had seen in a previous figure). The players here are colored according to the same
+                    pattern you had seen in the player-level passing view previously. Selecting a player here will give
+                    you their statistics throughout the game. See if you can notice any interesting patterns with the
+                    substitute players!
+                    <br><br><img class="img" src="images/guide/guide_09.png" alt="alt text">
+                </p>
+                <p class="p2"> <a href="#Dashboard">Skip to dashboard</a>
+                </p>
+            </section>
 
         </section>
 
 
-        <section class="section s4">
+        <section class="section s5">
             <!-- <p class="p2">PassBoard</p> -->
             <br><svg id="score"></svg>
             <br><svg id="chart"></svg>
@@ -131,7 +258,7 @@
 
 
 
-        <section class="section s5">
+        <section class="section s6">
             <h1> Contacts</h1>
             <p>
                 <strong>Anoop Kakkireni</strong>
