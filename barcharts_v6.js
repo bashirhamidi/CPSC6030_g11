@@ -7,7 +7,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         width: 1350,
         height: window.innerHeight / 6, //200,
         margin: {
-            top: 0,
+            top: 6,
             bottom: 11,
             right: 10,
             left: 50
