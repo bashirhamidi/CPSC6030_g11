@@ -1,8 +1,8 @@
 new fullpage('#FullPage', {
     autoScrolling: true,
     navigation: true,
-    anchors: ['Home', 'Background', 'About', 'Guide', 'Dashboard', 'Contacts'],
-    navigationTooltips: ['Home', 'Background', 'About the dashboard', 'Guide', 'Dashboard', 'Contacts'],
+    anchors: ['Home', 'Background', 'About', 'Guide', 'Dashboard', 'Video', 'Contacts'],
+    navigationTooltips: ['Home', 'Background', 'About the dashboard', 'Guide', 'Dashboard', 'Video', 'Contacts'],
     //showActiveTooltip: true,
     scrollNavPosition: screenLeft,
     paddingTop: '0em',
