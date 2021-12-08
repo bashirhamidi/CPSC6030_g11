@@ -295,6 +295,22 @@ h1 {
 
     p {
         text-align: left;
+        margin: 100pt; //margin is not working... Figured it out. Can't use body tag, it has to be paragraph p
+        //margin-left: 6em;
+        font-size: 1.7rem;
+
+    }
+}
+
+.s7 {
+    h1 {
+        text-align: left;
+        margin-left: 50pt;
+        font-size: 4rem;
+    }
+
+    p {
+        text-align: left;
         margin: 50pt; //margin is not working... Figured it out. Can't use body tag, it has to be paragraph p
         //margin-left: 6em;
         font-size: 1.7rem;

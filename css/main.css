@@ -129,6 +129,18 @@ h1 {
 
 .s6 p {
   text-align: left;
+  margin: 100pt;
+  font-size: 1.7rem;
+}
+
+.s7 h1 {
+  text-align: left;
+  margin-left: 50pt;
+  font-size: 4rem;
+}
+
+.s7 p {
+  text-align: left;
   margin: 50pt;
   font-size: 1.7rem;
 }
