@@ -530,7 +530,7 @@ d3.json("18245_madrid.json").then(function (dataset) {
         top: 10, //(plotscale * (14.86 / 960)),
         right: (plotscale * (20 / 960)),
         bottom: 0, //(plotscale * (24 / 960)),
-        left: (plotscale * (100 / 960))
+        left: 100//(plotscale * (100 / 960))
     }
     var width = plotscale - margin.left - margin.right
     var height = (plotscale * (68 / 105) - margin.top - margin.bottom)
